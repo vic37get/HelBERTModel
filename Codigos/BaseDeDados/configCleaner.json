@@ -1,0 +1,10 @@
+{
+    "dataset": "",
+    "tokenizador": "",
+    "coluna": "text",
+    "tam_min_sentencas": 11,
+    "tam_max_sentencas": 126,
+    "colunas": ["text"],
+    "cased": true,
+    "accents": true
+}

@@ -1,0 +1,11 @@
+pandas
+transformers
+scikit-learn
+tqdm
+tokenizers
+numpy
+iterative-stratification
+torch
+datasets
+evaluate
+accelerate
