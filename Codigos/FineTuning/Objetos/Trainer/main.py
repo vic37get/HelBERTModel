@@ -19,7 +19,9 @@ def main() -> None:
         metrics = bertObjetos.fit()
 
         print("Salvando resultados do modelo...")
-        writeJson(os.path.join(params['dir_save_metrics'], '{}-{}.json'.format(params['filenameMetrics'], infoModel['model_name'])), metrics)
+        writeJson(os.path.join(params['dir_save_metrics'], 'metrics-{}.json'.format(infoModel['model_name'])), metrics)
+        metrics_models.append(metrics)
+    writeJson(os.path.join(params['dir_save_metrics'], 'meticsModels.json'), metrics_models)
     
 
 if __name__ == "__main__":

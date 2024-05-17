@@ -17,7 +17,7 @@ class Dataset(torch.utils.data.Dataset):
     def __getitem__(self, idx):
         item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
         if self.labels:
-            item["labels"] = torch.tensor(self.labels[idx])
+            item["label"] = torch.tensor(self.labels[idx])
         return item
     def __len__(self):
         return len(self.encodings["input_ids"])
@@ -48,8 +48,9 @@ class ClassificaTipoObjetos:
         self.teste = pd.read_csv(teste)
         self.validacao = pd.read_csv(validacao)
 
+
     def tokeniza_texto(self, texto: str) -> torch.Tensor:
-        return self.tokenizer(texto, truncation=True, padding='max_length', max_length=256, return_tensors='pt')
+        return self.tokenizer(texto, truncation=True, padding='max_length', max_length=512, return_tensors='pt')
 
     
     def compute_metrics(self, p):    
@@ -104,6 +105,7 @@ class ClassificaTipoObjetos:
 
         print("Realizando a predição para a base de teste.")
         metrics = trainer.predict(test_dataset).metrics
+        metrics['name_model'] = self.model_name
 
         print("Salvando o modelo...")
         self.modelo.save_pretrained(os.path.join(self.dir_save_models, '{}'.format(self.model_name)))
