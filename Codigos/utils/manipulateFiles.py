@@ -13,9 +13,8 @@ def openFile(filename: str) -> list:
         Nome do arquivo.
     list
     """
-    
     with open(filename, "r", encoding="utf8") as f:
-        dados = f.readlines()
+        dados = [line.strip() for line in f.readlines()]
     return dados
 
 

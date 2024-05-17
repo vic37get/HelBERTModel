@@ -3,9 +3,17 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*.out
+*.log
+venv/
 # C extensions
 *.so
-
+*.csv
+*.json
+*.pth
+*.txt
+*.pkl
+*.safetensors
 # Distribution / packaging
 .Python
 build/

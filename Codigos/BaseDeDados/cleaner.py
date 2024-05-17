@@ -70,7 +70,7 @@ class Cleaner:
         """
         Reduz multiplos x para apenas um x.
         """
-        return re.sub(r'(([xX])+)', 'x', paragraphs)
+        return re.sub(r'(([xX]){2,})', 'x', paragraphs)
     
     @staticmethod
     def _corrigeNumPalavra(paragraphs):
@@ -165,6 +165,9 @@ class Corretor:
         texts = self._tokenizaEmail(texts)
         texts = self._tokenizaData(texts)
         texts = self._tokenizaHora(texts)
+        #texts = self._tokenizaNumero(texts)
+        #texts = self._tokenizaNumeroRomano(texts)
+        #texts = self._reduzNumeros(texts)
         texts = self._removeHifenInicial(texts)
         texts = self._corrigePontuacao(texts)
         texts = self._remove_characters_inicial(texts)
@@ -453,6 +456,27 @@ class Corretor:
         Tokeniza hora.
         """
         return re.sub(r'(\b(([0-1][0-9])|(2[0-3]))(\:|h)([0-5][0-9])?\b)', '<HORA>', paragraphs)
+    
+    @staticmethod
+    def _tokenizaNumero(paragraphs):
+        """
+        Tokeniza número.
+        """
+        return re.sub(r'(\b([0-9]+)\b)', '<NUMERO>', paragraphs)
+    
+    @staticmethod
+    def _tokenizaNumeroRomano(paragraphs):
+        """
+        Tokeniza número romano.
+        """
+        return re.sub(r"(\s|\.|\,|\;|\:|^)(?=[XVIΙ])(XC|XL|L?X{0,3})([IΙ]X|[IΙ]V|V?[IΙ]{0,3})(\s|\.|\,|\;|\:|$)", '<NUMERO>', paragraphs, flags=re.IGNORECASE)
+    
+    @staticmethod
+    def _reduzNumeros(paragraphs):
+        """
+        Reduz números.
+        """
+        return re.sub(r'(([\.\\\/\;\:\s])*(<NUMERO>([\-–\.\\\/\;\:\,\s])*)+)', ' <NUMERO> ', paragraphs)
 
     @staticmethod
     def _removeHifenInicial(paragraphs):

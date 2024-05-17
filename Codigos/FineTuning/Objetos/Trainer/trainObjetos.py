@@ -17,13 +17,13 @@ class Dataset(torch.utils.data.Dataset):
     def __getitem__(self, idx):
         item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
         if self.labels:
-            item["label"] = self.labels[idx]
+            item["labels"] = torch.tensor(self.labels[idx])
         return item
     def __len__(self):
         return len(self.encodings["input_ids"])
 
 
-class ClassificaIndicios:
+class ClassificaTipoObjetos:
     def __init__(self, batch_size: int, epochs: int, patience: int, model_name: str, dir_save_metrics: str,
                   dir_save_models: str, learning_rate: float, modelo: str, tokenizer: str, treino: str, 
                   validacao: str, teste: str, coluna: str) -> None:
@@ -39,7 +39,7 @@ class ClassificaIndicios:
         self.device = torch.device('cuda')
 
         print('Carregando modelo e tokenizador...')
-        self.modelo = AutoModelForSequenceClassification.from_pretrained(modelo, num_labels=7, problem_type="multi_label_classification").to(self.device)
+        self.modelo = AutoModelForSequenceClassification.from_pretrained(modelo, num_labels=4).to(self.device)
         self.tokenizer = AutoTokenizer.from_pretrained(tokenizer)
         self.modelo.resize_token_embeddings(len(self.tokenizer))
 
@@ -51,13 +51,10 @@ class ClassificaIndicios:
     def tokeniza_texto(self, texto: str) -> torch.Tensor:
         return self.tokenizer(texto, truncation=True, padding='max_length', max_length=256, return_tensors='pt')
 
-    def sigmoid(x):
-        return 1/(1 + np.exp(-x))
     
     def compute_metrics(self, p):    
         pred, labels = p
-        pred = sigmoid(pred)
-        pred = (pred > 0.5).astype(int).reshape(-1)
+        pred = np.argmax(pred, axis=1)
         accuracy = accuracy_score(y_true=labels, y_pred=pred)
         recall = recall_score(y_true=labels, y_pred=pred, average='macro',zero_division=0)
         precision = precision_score(y_true=labels, y_pred=pred, average='macro', zero_division=0)
@@ -69,10 +66,6 @@ class ClassificaIndicios:
         tokenized_train = self.tokeniza_texto(self.treino[self.coluna].tolist())
         tokenized_test = self.tokeniza_texto(self.teste[self.coluna].tolist())
         tokenized_val = self.tokeniza_texto(self.validacao[self.coluna].tolist())
-        
-        self.treino['label'] = self.treino[self.treino.columns[1:]].values.tolist()
-        self.teste['label'] = self.teste[self.teste.columns[1:]].values.tolist()
-        self.validacao['label'] = self.validacao[self.validacao.columns[1:]].values.tolist()
 
         train_dataset = Dataset(tokenized_train, self.treino['label'].tolist())
         val_dataset = Dataset(tokenized_test, self.teste['label'].tolist())

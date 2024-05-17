@@ -7,7 +7,6 @@ from transformers import BertTokenizer, BertModel
 class MyDataset(Dataset):
     def __init__(self, dataFrame: pd.DataFrame, labels: list, column: str, tokenizer: BertTokenizer,
                   device: torch.device, modelo: BertModel) -> list:
-        #labels.sort()
         self.X = dataFrame[column].tolist()
         self.Y = dataFrame[labels].values.tolist()
         self.tokenizer = tokenizer
@@ -32,7 +31,7 @@ class MyDataset(Dataset):
         embed_final=torch.mean(torch.mean(toks_embeds, dim=1), dim=0)
         return embed_final, self.Y[index]
     
-    def get_text_split(self, text: str, tokenizer: BertTokenizer, length: int = 200, overlap: int = 0, max_chunks: int = 35) -> list:
+    def get_text_split(self, text: str, tokenizer: BertTokenizer, length: int = 200, overlap: int = 0, max_chunks: int = 200) -> list:
         """
         Função que divide o texto em pedaços de tamanho length com overlap de tamanho overlap.
         Parâmetros:
@@ -76,11 +75,11 @@ class MyDataset(Dataset):
         """
         text = list(text)
         tokens = tokenizer(
-            text,
-            padding=True, 
+            text, 
             return_attention_mask=True,
             truncation=True,
             max_length=512,
+            padding='max_length',
             return_tensors='pt'
         )
         return {'input_ids': tokens['input_ids'], 'attention_mask': tokens['attention_mask']}

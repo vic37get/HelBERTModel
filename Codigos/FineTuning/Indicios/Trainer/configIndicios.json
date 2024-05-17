@@ -1,14 +1,14 @@
 {   
-    "batch_size": 4,
-    "epochs": 80,
+    "batch_size": 1,
+    "epochs": 50,
     "patience": 3,
-    "dir_save_metrics": "../../../../Metricas/Indicios",
-    "dir_save_models": "../../../../Modelos/Indicios",
+    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Indicios",
+    "dir_save_models": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/Indicios",
     "filenameMetrics": "metricsIndicios",
     "learning_rate": 2e-5,
-    "treino": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERT/Datasets/Indicios/bid_notices_weak/dataset_bid_notices_weak_hab_clean_treino_chunk_more.csv",
-    "validacao": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERT/Datasets/Indicios/bid_notices_weak/dataset_bid_notices_weak_hab_clean_validacao_chunk_more.csv",
-    "teste": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERT/Datasets/Indicios/bid_notices_weak/dataset_bid_notices_weak_hab_clean_teste_chunk_more.csv",
+    "treino": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/dataset_bid_notices_gold_treino.csv",
+    "validacao": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/dataset_bid_notices_gold_validacao.csv",
+    "teste": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/dataset_bid_notices_gold_teste.csv",
     "coluna": "text",
     "modelos": [
         {
