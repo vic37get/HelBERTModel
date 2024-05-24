@@ -1,0 +1,26 @@
+[
+    {
+        "model": "HelBERT-base-uncased-scratch",
+        "fertility": 1.25
+    },
+    {
+        "model": "HelBERT-base-uncased",
+        "fertility": 1.17
+    },
+    {
+        "model": "LegalBERT-pt-sc",
+        "fertility": 1.44
+    },
+    {
+        "model": "jurisBERT",
+        "fertility": 1.36
+    },
+    {
+        "model": "BERTimbau",
+        "fertility": 1.63
+    },
+    {
+        "model": "mBERT",
+        "fertility": 1.71
+    }
+]

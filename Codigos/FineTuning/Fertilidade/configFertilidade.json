@@ -1,0 +1,30 @@
+{
+    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsGold/dataset_gold_hab_atualizada.csv",
+    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Fertilidade/Indicios", 
+    "modelos": [
+        {
+            "model_name": "HelBERT-base-uncased-scratch",
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20"
+        },
+        {
+            "model_name": "HelBERT-base-uncased",
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased/checkpoint-epoca-30"
+        },
+        {
+            "model_name": "LegalBERT-pt-sc",
+            "tokenizador": "raquelsilveira/legalbertpt_sc"
+        },
+        {
+            "model_name": "jurisBERT",
+            "tokenizador": "alfaneo/jurisbert-base-portuguese-uncased"
+        },
+        {
+            "model_name": "BERTimbau",
+            "tokenizador": "neuralmind/bert-base-portuguese-cased"
+        },
+        {
+            "model_name": "mBERT",
+            "tokenizador": "bert-base-multilingual-cased"
+        }
+    ]
+}

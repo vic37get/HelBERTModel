@@ -1,0 +1,1982 @@
+[
+    {
+        "Palavra": "Homologação",
+        "Relacionada": "Adjudicação",
+        "Nao-relacionada": "Diligência"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Adjudicação",
+        "Nao-relacionada": "Remuneração"
+    },
+    {
+        "Palavra": "Suspensão",
+        "Relacionada": "Advertencia",
+        "Nao-relacionada": "Subconcessionária"
+    },
+    {
+        "Palavra": "Advertencia",
+        "Relacionada": "Penalidade",
+        "Nao-relacionada": "Convite"
+    },
+    {
+        "Palavra": "Inidoneidade",
+        "Relacionada": "Advertencia",
+        "Nao-relacionada": "Subvenção"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Legislação"
+    },
+    {
+        "Palavra": "Contrato",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Subsídio"
+    },
+    {
+        "Palavra": "Termo",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Desestatização"
+    },
+    {
+        "Palavra": "Cessão",
+        "Relacionada": "Alienação",
+        "Nao-relacionada": "Encampação"
+    },
+    {
+        "Palavra": "Alienação",
+        "Relacionada": "Doação",
+        "Nao-relacionada": "Superfaturamento"
+    },
+    {
+        "Palavra": "Venda",
+        "Relacionada": "Doação",
+        "Nao-relacionada": "Caução"
+    },
+    {
+        "Palavra": "Permuta",
+        "Relacionada": "Alienação",
+        "Nao-relacionada": "Pregoeiro"
+    },
+    {
+        "Palavra": "Permuta",
+        "Relacionada": "Investidura",
+        "Nao-relacionada": "PPP"
+    },
+    {
+        "Palavra": "Locação",
+        "Relacionada": "Aluguel",
+        "Nao-relacionada": "PPP"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Cadastro",
+        "Nao-relacionada": "Concedente"
+    },
+    {
+        "Palavra": "Concessão",
+        "Relacionada": "Subconcessão",
+        "Nao-relacionada": "Terceirização"
+    },
+    {
+        "Palavra": "Concurso",
+        "Relacionada": "Convite",
+        "Nao-relacionada": "Contratação"
+    },
+    {
+        "Palavra": "Leilão",
+        "Relacionada": "Concurso",
+        "Nao-relacionada": "Edificação"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Concurso",
+        "Nao-relacionada": "Fiscalização"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Concurso",
+        "Nao-relacionada": "Vistoria"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Consórcio",
+        "Nao-relacionada": "Cobrança"
+    },
+    {
+        "Palavra": "Contratação",
+        "Relacionada": "Subcontratação",
+        "Nao-relacionada": "Concessionária"
+    },
+    {
+        "Palavra": "Contratação",
+        "Relacionada": "Contratado",
+        "Nao-relacionada": "Suspensão"
+    },
+    {
+        "Palavra": "Contratação",
+        "Relacionada": "Contratante",
+        "Nao-relacionada": "Ilegalidade"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Convenente",
+        "Nao-relacionada": "Reforma"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Convenente",
+        "Nao-relacionada": "Suspensão"
+    },
+    {
+        "Palavra": "Cooperativa",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Outorga"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Credenciamento",
+        "Nao-relacionada": "Fraude"
+    },
+    {
+        "Palavra": "Preço",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Credenciamento"
+    },
+    {
+        "Palavra": "Salário",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Duplicata"
+    },
+    {
+        "Palavra": "Reajuste",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Hardware"
+    },
+    {
+        "Palavra": "Exequibilidade",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Subvenção"
+    },
+    {
+        "Palavra": "Fiança",
+        "Relacionada": "Caução",
+        "Nao-relacionada": "Cooperativa"
+    },
+    {
+        "Palavra": "Caução",
+        "Relacionada": "Arresto",
+        "Nao-relacionada": "Vistoria"
+    },
+    {
+        "Palavra": "Impedimento",
+        "Relacionada": "Suspeição",
+        "Nao-relacionada": "Quitação"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Concessionária"
+    },
+    {
+        "Palavra": "Leilão",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Desestatização"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Preposto"
+    },
+    {
+        "Palavra": "Lance",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Vigilância"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Prazo"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Recesso"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Permuta"
+    },
+    {
+        "Palavra": "Cargo",
+        "Relacionada": "Investidura",
+        "Nao-relacionada": "Cooperativa"
+    },
+    {
+        "Palavra": "Perícia",
+        "Relacionada": "Laudo",
+        "Nao-relacionada": "Edificação"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Edital",
+        "Nao-relacionada": "Subconcessão"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Sobrepreço",
+        "Nao-relacionada": "Fraude"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Superfaturamento",
+        "Nao-relacionada": "Ilegalidade"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Alienação",
+        "Nao-relacionada": "Hardware"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Licitação",
+        "Nao-relacionada": "Homologação"
+    },
+    {
+        "Palavra": "Locação",
+        "Relacionada": "Arrendamento",
+        "Nao-relacionada": "Juros"
+    },
+    {
+        "Palavra": "Leilão",
+        "Relacionada": "Convite",
+        "Nao-relacionada": "Desestatização"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Leilão",
+        "Nao-relacionada": "Advertencia"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Convite",
+        "Nao-relacionada": "Penalidade"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Pregoeiro",
+        "Nao-relacionada": "Contratação"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Proposta",
+        "Nao-relacionada": "Vigilância"
+    },
+    {
+        "Palavra": "Remuneração",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Aluguel"
+    },
+    {
+        "Palavra": "Salário",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Intempestividade"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Diligência"
+    },
+    {
+        "Palavra": "Precatório",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Vigilância"
+    },
+    {
+        "Palavra": "Cobrança",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Concessão"
+    },
+    {
+        "Palavra": "Liquidação",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Edificação"
+    },
+    {
+        "Palavra": "Débito",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Licitante"
+    },
+    {
+        "Palavra": "Empenho",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Arrendamento"
+    },
+    {
+        "Palavra": "Quitação",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Desconto"
+    },
+    {
+        "Palavra": "Subvenção",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Orçamento"
+    },
+    {
+        "Palavra": "Multa",
+        "Relacionada": "Inadimplemento",
+        "Nao-relacionada": "Vistoria"
+    },
+    {
+        "Palavra": "Prazo",
+        "Relacionada": "Contestação",
+        "Nao-relacionada": "Doação"
+    },
+    {
+        "Palavra": "Prazo",
+        "Relacionada": "Prescrição",
+        "Nao-relacionada": "Vigilância"
+    },
+    {
+        "Palavra": "Prazo",
+        "Relacionada": "Decadência",
+        "Nao-relacionada": "Contratante"
+    },
+    {
+        "Palavra": "Prazo",
+        "Relacionada": "Intempestividade",
+        "Nao-relacionada": "Tarifa"
+    },
+    {
+        "Palavra": "Preclusão",
+        "Relacionada": "Prazo",
+        "Nao-relacionada": "Contrato"
+    },
+    {
+        "Palavra": "Prazo",
+        "Relacionada": "Recesso",
+        "Nao-relacionada": "Encampação"
+    },
+    {
+        "Palavra": "Desconto",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Decadência"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Consórcio"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Subvenção"
+    },
+    {
+        "Palavra": "Repactuação",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Subsídio"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Despesa"
+    },
+    {
+        "Palavra": "Inflação",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Aluguel"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Licitante"
+    },
+    {
+        "Palavra": "Segurança",
+        "Relacionada": "Vigilância",
+        "Nao-relacionada": "Contrato"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Amostra",
+        "Nao-relacionada": "Eficácia"
+    },
+    {
+        "Palavra": "Diligência",
+        "Relacionada": "Proposta",
+        "Nao-relacionada": "Débito"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Sobrepreço",
+        "Nao-relacionada": "Concessão"
+    },
+    {
+        "Palavra": "Subcontratação",
+        "Relacionada": "Contratado",
+        "Nao-relacionada": "Permuta"
+    },
+    {
+        "Palavra": "Subcontratação",
+        "Relacionada": "Contratante",
+        "Nao-relacionada": "Convênio"
+    },
+    {
+        "Palavra": "Preposto",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Exequibilidade"
+    },
+    {
+        "Palavra": "Permuta",
+        "Relacionada": "Venda",
+        "Nao-relacionada": "Hardware"
+    },
+    {
+        "Palavra": "Investidura",
+        "Relacionada": "Venda",
+        "Nao-relacionada": "Pregão"
+    },
+    {
+        "Palavra": "Fiscalização",
+        "Relacionada": "Vistoria",
+        "Nao-relacionada": "Contratante"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Concedente",
+        "Nao-relacionada": "Inexequibilidade"
+    },
+    {
+        "Palavra": "Homologação",
+        "Relacionada": "Licitação",
+        "Nao-relacionada": "Contratação"
+    },
+    {
+        "Palavra": "Concurso",
+        "Relacionada": "Adjudicação",
+        "Nao-relacionada": "Convênio"
+    },
+    {
+        "Palavra": "Adjudicação",
+        "Relacionada": "Edital",
+        "Nao-relacionada": "Caução"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Adjudicação",
+        "Nao-relacionada": "Consórcio"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Adjudicação",
+        "Nao-relacionada": "Penalidade"
+    },
+    {
+        "Palavra": "Alienação",
+        "Relacionada": "Adjudicação",
+        "Nao-relacionada": "Repactuação"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Adjudicação",
+        "Nao-relacionada": "Diligência"
+    },
+    {
+        "Palavra": "Suspensão",
+        "Relacionada": "Penalidade",
+        "Nao-relacionada": "Ilegalidade"
+    },
+    {
+        "Palavra": "Suspensão",
+        "Relacionada": "Inidoneidade",
+        "Nao-relacionada": "Emergência"
+    },
+    {
+        "Palavra": "Inidoneidade",
+        "Relacionada": "Penalidade",
+        "Nao-relacionada": "Emergência"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Contrato",
+        "Nao-relacionada": "Juros"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Termo",
+        "Nao-relacionada": "PPP"
+    },
+    {
+        "Palavra": "Ajuste",
+        "Relacionada": "Consórcio",
+        "Nao-relacionada": "Termo"
+    },
+    {
+        "Palavra": "Ajuste",
+        "Relacionada": "Convenente",
+        "Nao-relacionada": "PPP"
+    },
+    {
+        "Palavra": "Credenciamento",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Duplicata"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Eficiência"
+    },
+    {
+        "Palavra": "Contrato",
+        "Relacionada": "Termo",
+        "Nao-relacionada": "Vigilância"
+    },
+    {
+        "Palavra": "Cessão",
+        "Relacionada": "Doação",
+        "Nao-relacionada": "Subconcessão"
+    },
+    {
+        "Palavra": "Cessão",
+        "Relacionada": "Permuta",
+        "Nao-relacionada": "Eficácia"
+    },
+    {
+        "Palavra": "Cessão",
+        "Relacionada": "Licitação",
+        "Nao-relacionada": "Legitimidade"
+    },
+    {
+        "Palavra": "Alienação",
+        "Relacionada": "Venda",
+        "Nao-relacionada": "Fiscalização"
+    },
+    {
+        "Palavra": "Permuta",
+        "Relacionada": "Doação",
+        "Nao-relacionada": "Penalidade"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Doação",
+        "Nao-relacionada": "Advertencia"
+    },
+    {
+        "Palavra": "Investidura",
+        "Relacionada": "Doação",
+        "Nao-relacionada": "Licitante"
+    },
+    {
+        "Palavra": "Investidura",
+        "Relacionada": "Alienação",
+        "Nao-relacionada": "Eficiência"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Permuta",
+        "Nao-relacionada": "Eficiência"
+    },
+    {
+        "Palavra": "Cargo",
+        "Relacionada": "Permuta",
+        "Nao-relacionada": "Data-base"
+    },
+    {
+        "Palavra": "Arrendamento",
+        "Relacionada": "Aluguel",
+        "Nao-relacionada": "Decadência"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Hardware",
+        "Nao-relacionada": "Cessão"
+    },
+    {
+        "Palavra": "Cadastro",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Fiscalização"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Cadastro",
+        "Nao-relacionada": "Remuneração"
+    },
+    {
+        "Palavra": "Pregoerio",
+        "Relacionada": "Licitação",
+        "Nao-relacionada": "Laudo"
+    },
+    {
+        "Palavra": "Pregoerio",
+        "Relacionada": "Pregoeiro",
+        "Nao-relacionada": "Orçamento"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Concessionária",
+        "Nao-relacionada": "Subsídio"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Concedente",
+        "Nao-relacionada": "Subvenção"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Desestatização",
+        "Nao-relacionada": "Juros"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Outorga",
+        "Nao-relacionada": "Fraude"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Encampação",
+        "Nao-relacionada": "Recesso"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Vistoria",
+        "Nao-relacionada": "Legislação"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Subconcessionária",
+        "Nao-relacionada": "Cobrança"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Concessionária",
+        "Nao-relacionada": "Remuneração"
+    },
+    {
+        "Palavra": "Desestatização",
+        "Relacionada": "Concessionária",
+        "Nao-relacionada": "Inadimplemento"
+    },
+    {
+        "Palavra": "Concessionária",
+        "Relacionada": "Outorga",
+        "Nao-relacionada": "Venda"
+    },
+    {
+        "Palavra": "Concessionária",
+        "Relacionada": "Encampação",
+        "Nao-relacionada": "Caução"
+    },
+    {
+        "Palavra": "Vistoria",
+        "Relacionada": "Concessionária",
+        "Nao-relacionada": "Subsídio"
+    },
+    {
+        "Palavra": "Concessionária",
+        "Relacionada": "Subconcessionária",
+        "Nao-relacionada": "Orçamento"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Desestatização",
+        "Nao-relacionada": "Cláusula"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Outorga",
+        "Nao-relacionada": "Preclusão"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Encampação",
+        "Nao-relacionada": "Efetividade"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Vistoria",
+        "Nao-relacionada": "Preclusão"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Subconcessionária",
+        "Nao-relacionada": "Prescrição"
+    },
+    {
+        "Palavra": "Desestatização",
+        "Relacionada": "Outorga",
+        "Nao-relacionada": "Perícia"
+    },
+    {
+        "Palavra": "Desestatização",
+        "Relacionada": "Encampação",
+        "Nao-relacionada": "Investidura"
+    },
+    {
+        "Palavra": "Desestatização",
+        "Relacionada": "Vistoria",
+        "Nao-relacionada": "Aluguel"
+    },
+    {
+        "Palavra": "Desestatização",
+        "Relacionada": "Subconcessionária",
+        "Nao-relacionada": "Laudo"
+    },
+    {
+        "Palavra": "Encampação",
+        "Relacionada": "Outorga",
+        "Nao-relacionada": "Fiscalização"
+    },
+    {
+        "Palavra": "Vistoria",
+        "Relacionada": "Outorga",
+        "Nao-relacionada": "Fiscalização"
+    },
+    {
+        "Palavra": "Subconcessionária",
+        "Relacionada": "Outorga",
+        "Nao-relacionada": "Edificação"
+    },
+    {
+        "Palavra": "Vistoria",
+        "Relacionada": "Encampação",
+        "Nao-relacionada": "Suspeição"
+    },
+    {
+        "Palavra": "Encampação",
+        "Relacionada": "Subconcessionária",
+        "Nao-relacionada": "Quitação"
+    },
+    {
+        "Palavra": "Vistoria",
+        "Relacionada": "Subconcessionária",
+        "Nao-relacionada": "Contestação"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Convite",
+        "Nao-relacionada": "Perícia"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Leilão",
+        "Nao-relacionada": "Termo"
+    },
+    {
+        "Palavra": "Concurso",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Remuneração"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Licitação",
+        "Nao-relacionada": "Vigilância"
+    },
+    {
+        "Palavra": "Concurso",
+        "Relacionada": "Pregoeiro",
+        "Nao-relacionada": "Capacitação"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Concurso",
+        "Nao-relacionada": "Homologação"
+    },
+    {
+        "Palavra": "Concurso",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Proposta"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Concurso",
+        "Nao-relacionada": "Advertencia"
+    },
+    {
+        "Palavra": "Concurso",
+        "Relacionada": "Edital",
+        "Nao-relacionada": "Vigilância"
+    },
+    {
+        "Palavra": "Concurso",
+        "Relacionada": "Sobrepreço",
+        "Nao-relacionada": "Prazo"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Concurso",
+        "Nao-relacionada": "Remuneração"
+    },
+    {
+        "Palavra": "Concurso",
+        "Relacionada": "Alienação",
+        "Nao-relacionada": "Salário"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Concurso",
+        "Nao-relacionada": "Concessão"
+    },
+    {
+        "Palavra": "Consórcio",
+        "Relacionada": "Convenente",
+        "Nao-relacionada": "Inflação"
+    },
+    {
+        "Palavra": "Credenciamento",
+        "Relacionada": "Consórcio",
+        "Nao-relacionada": "Fraude"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Consórcio",
+        "Nao-relacionada": "Prescrição"
+    },
+    {
+        "Palavra": "Contratante",
+        "Relacionada": "Contratado",
+        "Nao-relacionada": "Caução"
+    },
+    {
+        "Palavra": "Contratação",
+        "Relacionada": "Advertência",
+        "Nao-relacionada": "Cooperativa"
+    },
+    {
+        "Palavra": "Contratação",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Despesa"
+    },
+    {
+        "Palavra": "Cláusula",
+        "Relacionada": "Contratação",
+        "Nao-relacionada": "Quitação"
+    },
+    {
+        "Palavra": "Contratação",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Reforma"
+    },
+    {
+        "Palavra": "Contratação",
+        "Relacionada": "Licitação",
+        "Nao-relacionada": "Legislação"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Contratação",
+        "Nao-relacionada": "Eficiência"
+    },
+    {
+        "Palavra": "Advertência",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Suspensão"
+    },
+    {
+        "Palavra": "Advertência",
+        "Relacionada": "Contratado",
+        "Nao-relacionada": "Eficiência"
+    },
+    {
+        "Palavra": "Cláusula",
+        "Relacionada": "Advertência",
+        "Nao-relacionada": "Ilegalidade"
+    },
+    {
+        "Palavra": "Advertência",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Pregão"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Advertência",
+        "Nao-relacionada": "Laudo"
+    },
+    {
+        "Palavra": "Subcontratação",
+        "Relacionada": "Advertência",
+        "Nao-relacionada": "Subconcessionária"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Advertência",
+        "Nao-relacionada": "Hardware"
+    },
+    {
+        "Palavra": "Terceirização",
+        "Relacionada": "Contratado",
+        "Nao-relacionada": "Sobrepreço"
+    },
+    {
+        "Palavra": "Cláusula",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Remuneração"
+    },
+    {
+        "Palavra": "Ajuste",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Decadência"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Recesso"
+    },
+    {
+        "Palavra": "Subcontratação",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Amostra"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Laudo"
+    },
+    {
+        "Palavra": "Cláusula",
+        "Relacionada": "Contratado",
+        "Nao-relacionada": "Recesso"
+    },
+    {
+        "Palavra": "Ajuste",
+        "Relacionada": "Contratado",
+        "Nao-relacionada": "RDC"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Contratado",
+        "Nao-relacionada": "Preclusão"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Contratado",
+        "Nao-relacionada": "Cooperativa"
+    },
+    {
+        "Palavra": "Cláusula",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Subsídio"
+    },
+    {
+        "Palavra": "Cláusula",
+        "Relacionada": "Licitação",
+        "Nao-relacionada": "Licitante"
+    },
+    {
+        "Palavra": "Cláusula",
+        "Relacionada": "Subcontratação",
+        "Nao-relacionada": "Cobrança"
+    },
+    {
+        "Palavra": "Cláusula",
+        "Relacionada": "Convênio",
+        "Nao-relacionada": "PPP"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Tarifa"
+    },
+    {
+        "Palavra": "Subcontratação",
+        "Relacionada": "Ajuste",
+        "Nao-relacionada": "Alienação"
+    },
+    {
+        "Palavra": "Duplicata",
+        "Relacionada": "Caução",
+        "Nao-relacionada": "Homologação"
+    },
+    {
+        "Palavra": "Credenciamento",
+        "Relacionada": "Convenente",
+        "Nao-relacionada": "Débito"
+    },
+    {
+        "Palavra": "Concedente",
+        "Relacionada": "Credenciamento",
+        "Nao-relacionada": "Perícia"
+    },
+    {
+        "Palavra": "Preposto",
+        "Relacionada": "Cooperativa",
+        "Nao-relacionada": "Edital"
+    },
+    {
+        "Palavra": "Juros",
+        "Relacionada": "Precatório",
+        "Nao-relacionada": "Perícia"
+    },
+    {
+        "Palavra": "Precatório",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Hardware"
+    },
+    {
+        "Palavra": "Juros",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Empenho"
+    },
+    {
+        "Palavra": "Orçamento",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Intempestividade"
+    },
+    {
+        "Palavra": "Salário",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Recesso"
+    },
+    {
+        "Palavra": "Reajuste",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Suspeição"
+    },
+    {
+        "Palavra": "Exequibilidade",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Desestatização"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Advertencia"
+    },
+    {
+        "Palavra": "Lance",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Juros"
+    },
+    {
+        "Palavra": "Desconto",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Adjudicação"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Advertência"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Juros"
+    },
+    {
+        "Palavra": "Repactuação",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Inexequibilidade"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Ilegalidade"
+    },
+    {
+        "Palavra": "Data-base",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Vistoria"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Reajuste"
+    },
+    {
+        "Palavra": "Leilão",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Multa"
+    },
+    {
+        "Palavra": "Data-base",
+        "Relacionada": "Convite",
+        "Nao-relacionada": "Débito"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Data-base",
+        "Nao-relacionada": "Prazo"
+    },
+    {
+        "Palavra": "Reajuste",
+        "Relacionada": "Salário",
+        "Nao-relacionada": "Concessionária"
+    },
+    {
+        "Palavra": "Data-base",
+        "Relacionada": "Pagamento",
+        "Nao-relacionada": "Penalidade"
+    },
+    {
+        "Palavra": "Inidoneidade",
+        "Relacionada": "Advertência",
+        "Nao-relacionada": "Legitimidade"
+    },
+    {
+        "Palavra": "Inidoneidade",
+        "Relacionada": "Multa",
+        "Nao-relacionada": "Preclusão"
+    },
+    {
+        "Palavra": "Fraude",
+        "Relacionada": "Inidoneidade",
+        "Nao-relacionada": "Preclusão"
+    },
+    {
+        "Palavra": "Multa",
+        "Relacionada": "Advertência",
+        "Nao-relacionada": "Desestatização"
+    },
+    {
+        "Palavra": "Fraude",
+        "Relacionada": "Advertência",
+        "Nao-relacionada": "Termo"
+    },
+    {
+        "Palavra": "Fraude",
+        "Relacionada": "Multa",
+        "Nao-relacionada": "Suspeição"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Emergência",
+        "Nao-relacionada": "Efetividade"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Exequibilidade",
+        "Nao-relacionada": "Recesso"
+    },
+    {
+        "Palavra": "Exequibilidade",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Reforma"
+    },
+    {
+        "Palavra": "Exequibilidade",
+        "Relacionada": "Desconto",
+        "Nao-relacionada": "Cadastro"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Exequibilidade",
+        "Nao-relacionada": "Contratação"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Exequibilidade",
+        "Nao-relacionada": "Efetividade"
+    },
+    {
+        "Palavra": "Exequibilidade",
+        "Relacionada": "Repactuação",
+        "Nao-relacionada": "Ilegalidade"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Exequibilidade",
+        "Nao-relacionada": "Edificação"
+    },
+    {
+        "Palavra": "Exequibilidade",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Fiscalização"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Exequibilidade",
+        "Nao-relacionada": "Despesa"
+    },
+    {
+        "Palavra": "Fiança",
+        "Relacionada": "Arresto",
+        "Nao-relacionada": "Venda"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Caução",
+        "Nao-relacionada": "Pregoerio"
+    },
+    {
+        "Palavra": "Impedimento",
+        "Relacionada": "Licitação",
+        "Nao-relacionada": "Legislação"
+    },
+    {
+        "Palavra": "Impedimento",
+        "Relacionada": "Multa",
+        "Nao-relacionada": "Suspensão"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "RDC"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Desconto",
+        "Nao-relacionada": "Segurança"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Sobrepreço",
+        "Nao-relacionada": "Intempestividade"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Superfaturamento",
+        "Nao-relacionada": "Recesso"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Repactuação",
+        "Nao-relacionada": "Preposto"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Tarifa",
+        "Nao-relacionada": "Hardware"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Capacitação"
+    },
+    {
+        "Palavra": "Inexequibilidade",
+        "Relacionada": "Proposta",
+        "Nao-relacionada": "Segurança"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Leilão",
+        "Nao-relacionada": "Capacitação"
+    },
+    {
+        "Palavra": "Leilão",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Concedente"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Leilão",
+        "Nao-relacionada": "Preposto"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Leilão",
+        "Nao-relacionada": "Impedimento"
+    },
+    {
+        "Palavra": "Lance",
+        "Relacionada": "Convite",
+        "Nao-relacionada": "Laudo"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Contrato"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Pregão",
+        "Nao-relacionada": "Suspeição"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "RDC",
+        "Nao-relacionada": "Subconcessionária"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Proposta",
+        "Nao-relacionada": "Cláusula"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Impedimento"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Eficiência"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Subvenção"
+    },
+    {
+        "Palavra": "Desconto",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Legitimidade"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Tarifa"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Vistoria"
+    },
+    {
+        "Palavra": "Lance",
+        "Relacionada": "Repactuação",
+        "Nao-relacionada": "Venda"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Prazo"
+    },
+    {
+        "Palavra": "Lance",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Cláusula"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Pregão",
+        "Nao-relacionada": "Outorga"
+    },
+    {
+        "Palavra": "Pregoeiro",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Cláusula"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Proposta",
+        "Nao-relacionada": "Diligência"
+    },
+    {
+        "Palavra": "Lance",
+        "Relacionada": "Amostra",
+        "Nao-relacionada": "RDC"
+    },
+    {
+        "Palavra": "Diligência",
+        "Relacionada": "Lance",
+        "Nao-relacionada": "Quitação"
+    },
+    {
+        "Palavra": "Cargo",
+        "Relacionada": "Venda",
+        "Nao-relacionada": "Proposta"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Edital",
+        "Nao-relacionada": "Consórcio"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Edital",
+        "Nao-relacionada": "Vigilância"
+    },
+    {
+        "Palavra": "Alienação",
+        "Relacionada": "Edital",
+        "Nao-relacionada": "Subconcessão"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Edital",
+        "Nao-relacionada": "Contratação"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Alienação",
+        "Nao-relacionada": "Legislação"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Sobrepreço",
+        "Nao-relacionada": "Vistoria"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Cobrança"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Alienação",
+        "Nao-relacionada": "Juros"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Superfaturamento",
+        "Nao-relacionada": "Vistoria"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Multa",
+        "Nao-relacionada": "Encampação"
+    },
+    {
+        "Palavra": "Licitante",
+        "Relacionada": "Alienação",
+        "Nao-relacionada": "Subconcessionária"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Pregoeiro",
+        "Nao-relacionada": "Reforma"
+    },
+    {
+        "Palavra": "Licitação",
+        "Relacionada": "Subcontratação",
+        "Nao-relacionada": "Decadência"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Licitação",
+        "Nao-relacionada": "Contestação"
+    },
+    {
+        "Palavra": "Leilão",
+        "Relacionada": "Pregoeiro",
+        "Nao-relacionada": "Liquidação"
+    },
+    {
+        "Palavra": "Pregoeiro",
+        "Relacionada": "Convite",
+        "Nao-relacionada": "Cargo"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Convite",
+        "Nao-relacionada": "Precatório"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Pregoeiro",
+        "Nao-relacionada": "Impedimento"
+    },
+    {
+        "Palavra": "Pregão",
+        "Relacionada": "Amostra",
+        "Nao-relacionada": "Concessão"
+    },
+    {
+        "Palavra": "Diligência",
+        "Relacionada": "Pregão",
+        "Nao-relacionada": "Perícia"
+    },
+    {
+        "Palavra": "Empenho",
+        "Relacionada": "Despesa",
+        "Nao-relacionada": "Lance"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Edificação",
+        "Nao-relacionada": "Preposto"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "RDC",
+        "Nao-relacionada": "Remuneração"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Reforma",
+        "Nao-relacionada": "Concessão"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Edificação",
+        "Nao-relacionada": "Reajuste"
+    },
+    {
+        "Palavra": "Reforma",
+        "Relacionada": "Edificação",
+        "Nao-relacionada": "Repactuação"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Reforma",
+        "Nao-relacionada": "Capacitação"
+    },
+    {
+        "Palavra": "Remuneração",
+        "Relacionada": "Salário",
+        "Nao-relacionada": "Subconcessionária"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Remuneração",
+        "Nao-relacionada": "Preposto"
+    },
+    {
+        "Palavra": "Remuneração",
+        "Relacionada": "Precatório",
+        "Nao-relacionada": "Pregoerio"
+    },
+    {
+        "Palavra": "Remuneração",
+        "Relacionada": "Cobrança",
+        "Nao-relacionada": "Preclusão"
+    },
+    {
+        "Palavra": "Liquidação",
+        "Relacionada": "Remuneração",
+        "Nao-relacionada": "Vigilância"
+    },
+    {
+        "Palavra": "Débito",
+        "Relacionada": "Remuneração",
+        "Nao-relacionada": "Prazo"
+    },
+    {
+        "Palavra": "Remuneração",
+        "Relacionada": "Empenho",
+        "Nao-relacionada": "Tarifa"
+    },
+    {
+        "Palavra": "Quitação",
+        "Relacionada": "Remuneração",
+        "Nao-relacionada": "Contrato"
+    },
+    {
+        "Palavra": "Remuneração",
+        "Relacionada": "Subvenção",
+        "Nao-relacionada": "Convenente"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Salário",
+        "Nao-relacionada": "Termo"
+    },
+    {
+        "Palavra": "Precatório",
+        "Relacionada": "Salário",
+        "Nao-relacionada": "Edital"
+    },
+    {
+        "Palavra": "Cobrança",
+        "Relacionada": "Salário",
+        "Nao-relacionada": "Proposta"
+    },
+    {
+        "Palavra": "Liquidação",
+        "Relacionada": "Salário",
+        "Nao-relacionada": "Aluguel"
+    },
+    {
+        "Palavra": "Débito",
+        "Relacionada": "Salário",
+        "Nao-relacionada": "Contrato"
+    },
+    {
+        "Palavra": "Empenho",
+        "Relacionada": "Salário",
+        "Nao-relacionada": "Advertencia"
+    },
+    {
+        "Palavra": "Quitação",
+        "Relacionada": "Salário",
+        "Nao-relacionada": "Diligência"
+    },
+    {
+        "Palavra": "Salário",
+        "Relacionada": "Subvenção",
+        "Nao-relacionada": "Superfaturamento"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Precatório",
+        "Nao-relacionada": "Perícia"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Cobrança",
+        "Nao-relacionada": "Superfaturamento"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Liquidação",
+        "Nao-relacionada": "Fraude"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Débito",
+        "Nao-relacionada": "Capacitação"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Empenho",
+        "Nao-relacionada": "Desestatização"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Quitação",
+        "Nao-relacionada": "Desconto"
+    },
+    {
+        "Palavra": "Subsídio",
+        "Relacionada": "Subvenção",
+        "Nao-relacionada": "Permuta"
+    },
+    {
+        "Palavra": "Cobrança",
+        "Relacionada": "Precatório",
+        "Nao-relacionada": "Hardware"
+    },
+    {
+        "Palavra": "Liquidação",
+        "Relacionada": "Precatório",
+        "Nao-relacionada": "Proposta"
+    },
+    {
+        "Palavra": "Débito",
+        "Relacionada": "Precatório",
+        "Nao-relacionada": "Contratado"
+    },
+    {
+        "Palavra": "Empenho",
+        "Relacionada": "Precatório",
+        "Nao-relacionada": "Terceirização"
+    },
+    {
+        "Palavra": "Quitação",
+        "Relacionada": "Precatório",
+        "Nao-relacionada": "Laudo"
+    },
+    {
+        "Palavra": "Precatório",
+        "Relacionada": "Subvenção",
+        "Nao-relacionada": "Juros"
+    },
+    {
+        "Palavra": "Liquidação",
+        "Relacionada": "Cobrança",
+        "Nao-relacionada": "Pregoerio"
+    },
+    {
+        "Palavra": "Débito",
+        "Relacionada": "Cobrança",
+        "Nao-relacionada": "Hardware"
+    },
+    {
+        "Palavra": "Empenho",
+        "Relacionada": "Cobrança",
+        "Nao-relacionada": "Aluguel"
+    },
+    {
+        "Palavra": "Quitação",
+        "Relacionada": "Cobrança",
+        "Nao-relacionada": "Inidoneidade"
+    },
+    {
+        "Palavra": "Cobrança",
+        "Relacionada": "Subvenção",
+        "Nao-relacionada": "Fiança"
+    },
+    {
+        "Palavra": "Liquidação",
+        "Relacionada": "Débito",
+        "Nao-relacionada": "Termo"
+    },
+    {
+        "Palavra": "Liquidação",
+        "Relacionada": "Empenho",
+        "Nao-relacionada": "Desestatização"
+    },
+    {
+        "Palavra": "Liquidação",
+        "Relacionada": "Quitação",
+        "Nao-relacionada": "Concedente"
+    },
+    {
+        "Palavra": "Liquidação",
+        "Relacionada": "Subvenção",
+        "Nao-relacionada": "Exequibilidade"
+    },
+    {
+        "Palavra": "Débito",
+        "Relacionada": "Empenho",
+        "Nao-relacionada": "RDC"
+    },
+    {
+        "Palavra": "Débito",
+        "Relacionada": "Quitação",
+        "Nao-relacionada": "Capacitação"
+    },
+    {
+        "Palavra": "Débito",
+        "Relacionada": "Subvenção",
+        "Nao-relacionada": "Homologação"
+    },
+    {
+        "Palavra": "Quitação",
+        "Relacionada": "Empenho",
+        "Nao-relacionada": "Duplicata"
+    },
+    {
+        "Palavra": "Empenho",
+        "Relacionada": "Subvenção",
+        "Nao-relacionada": "Desconto"
+    },
+    {
+        "Palavra": "Quitação",
+        "Relacionada": "Subvenção",
+        "Nao-relacionada": "Desconto"
+    },
+    {
+        "Palavra": "Prescrição",
+        "Relacionada": "Contestação",
+        "Nao-relacionada": "Desestatização"
+    },
+    {
+        "Palavra": "Contestação",
+        "Relacionada": "Decadência",
+        "Nao-relacionada": "Contratação"
+    },
+    {
+        "Palavra": "Intempestividade",
+        "Relacionada": "Contestação",
+        "Nao-relacionada": "Edital"
+    },
+    {
+        "Palavra": "Preclusão",
+        "Relacionada": "Contestação",
+        "Nao-relacionada": "Caução"
+    },
+    {
+        "Palavra": "Contestação",
+        "Relacionada": "Recesso",
+        "Nao-relacionada": "Data-base"
+    },
+    {
+        "Palavra": "Prescrição",
+        "Relacionada": "Decadência",
+        "Nao-relacionada": "Quitação"
+    },
+    {
+        "Palavra": "Intempestividade",
+        "Relacionada": "Prescrição",
+        "Nao-relacionada": "Licitante"
+    },
+    {
+        "Palavra": "Preclusão",
+        "Relacionada": "Prescrição",
+        "Nao-relacionada": "Consórcio"
+    },
+    {
+        "Palavra": "Prescrição",
+        "Relacionada": "Recesso",
+        "Nao-relacionada": "Intempestividade"
+    },
+    {
+        "Palavra": "Intempestividade",
+        "Relacionada": "Decadência",
+        "Nao-relacionada": "Inadimplemento"
+    },
+    {
+        "Palavra": "Preclusão",
+        "Relacionada": "Decadência",
+        "Nao-relacionada": "Liquidação"
+    },
+    {
+        "Palavra": "Recesso",
+        "Relacionada": "Decadência",
+        "Nao-relacionada": "Licitante"
+    },
+    {
+        "Palavra": "Preclusão",
+        "Relacionada": "Intempestividade",
+        "Nao-relacionada": "Lance"
+    },
+    {
+        "Palavra": "Intempestividade",
+        "Relacionada": "Recesso",
+        "Nao-relacionada": "Doação"
+    },
+    {
+        "Palavra": "Preclusão",
+        "Relacionada": "Recesso",
+        "Nao-relacionada": "Legislação"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Desconto",
+        "Nao-relacionada": "Pregão"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Desconto",
+        "Nao-relacionada": "Convênio"
+    },
+    {
+        "Palavra": "Desconto",
+        "Relacionada": "Repactuação",
+        "Nao-relacionada": "Sobrepreço"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Desconto",
+        "Nao-relacionada": "Terceirização"
+    },
+    {
+        "Palavra": "Desconto",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "PPP"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Desconto",
+        "Nao-relacionada": "Pregão"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Repactuação",
+        "Nao-relacionada": "Perícia"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Sobrepreço",
+        "Nao-relacionada": "Licitante"
+    },
+    {
+        "Palavra": "Sobrepreço",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Arrendamento"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Sobrepreço",
+        "Nao-relacionada": "Inidoneidade"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Repactuação",
+        "Nao-relacionada": "Arresto"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Superfaturamento",
+        "Nao-relacionada": "Penalidade"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Desestatização"
+    },
+    {
+        "Palavra": "Superfaturamento",
+        "Relacionada": "Proposta",
+        "Nao-relacionada": "Encampação"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Repactuação",
+        "Nao-relacionada": "Convenente"
+    },
+    {
+        "Palavra": "Repactuação",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Cargo"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Repactuação",
+        "Nao-relacionada": "Consórcio"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Convenente"
+    },
+    {
+        "Palavra": "Tarifa",
+        "Relacionada": "Proposta",
+        "Nao-relacionada": "Penalidade"
+    },
+    {
+        "Palavra": "Proposta",
+        "Relacionada": "Inflação",
+        "Nao-relacionada": "Laudo"
+    },
+    {
+        "Palavra": "Preço",
+        "Relacionada": "Amostra",
+        "Nao-relacionada": "Subvenção"
+    },
+    {
+        "Palavra": "Diligência",
+        "Relacionada": "Preço",
+        "Nao-relacionada": "Orçamento"
+    },
+    {
+        "Palavra": "PPP",
+        "Relacionada": "Terceirização",
+        "Nao-relacionada": "Penalidade"
+    },
+    {
+        "Palavra": "Efetividade",
+        "Relacionada": "Eficácia",
+        "Nao-relacionada": "Edificação"
+    },
+    {
+        "Palavra": "Efetividade",
+        "Relacionada": "Eficiência",
+        "Nao-relacionada": "Preclusão"
+    },
+    {
+        "Palavra": "Eficácia",
+        "Relacionada": "Eficiência",
+        "Nao-relacionada": "Convenente"
+    },
+    {
+        "Palavra": "Legislação",
+        "Relacionada": "Legitimidade",
+        "Nao-relacionada": "Fiança"
+    },
+    {
+        "Palavra": "Ilegalidade",
+        "Relacionada": "Legitimidade",
+        "Nao-relacionada": "Subvenção"
+    },
+    {
+        "Palavra": "Ilegalidade",
+        "Relacionada": "Legislação",
+        "Nao-relacionada": "Desconto"
+    },
+    {
+        "Palavra": "RDC",
+        "Relacionada": "Convite",
+        "Nao-relacionada": "Concessão"
+    },
+    {
+        "Palavra": "Diligência",
+        "Relacionada": "Amostra",
+        "Nao-relacionada": "Preposto"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Capacitação",
+        "Nao-relacionada": "Edificação"
+    },
+    {
+        "Palavra": "Vistoria",
+        "Relacionada": "Capacitação",
+        "Nao-relacionada": "Edificação"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Vistoria",
+        "Nao-relacionada": "Juros"
+    },
+    {
+        "Palavra": "Convênio",
+        "Relacionada": "Subcontratação",
+        "Nao-relacionada": "Salário"
+    }
+]

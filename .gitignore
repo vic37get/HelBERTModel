@@ -9,7 +9,6 @@ venv/
 # C extensions
 *.so
 *.csv
-*.json
 *.pth
 *.txt
 *.pkl

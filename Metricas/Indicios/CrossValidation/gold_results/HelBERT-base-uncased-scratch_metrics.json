@@ -1,0 +1,10 @@
+{
+    "model_name": "HelBERT-base-uncased-scratch",
+    "accuracy": 0.8636868799880659,
+    "precision": 0.9384221309563066,
+    "recall": 0.9222892820780084,
+    "f1": 0.9300424451393738,
+    "roc_auc": 0.9551244387537391,
+    "hammingLoss": 0.022879039734040856,
+    "training_time": 20725.21755170822
+}

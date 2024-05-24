@@ -1,0 +1,8 @@
+{
+    "modelName": "HelBERT-base-uncased-scratch",
+    "precisao": 0.7639754213028206,
+    "recall": 0.5502368893971573,
+    "f1": 0.5889060033182044,
+    "acuracia": 0.5502368893971573,
+    "hloss": 0.4497631106028427
+}
