@@ -23,6 +23,7 @@ class MyDataset(Dataset):
         tokens = { k: v.to(self.device) for k, v in tokens.items() }
         with torch.no_grad():
             output=self.modelo(input_ids=tokens['input_ids'],attention_mask=tokens['attention_mask'])
+        #output=self.modelo(input_ids=tokens['input_ids'],attention_mask=tokens['attention_mask'])
         toks_embeds = torch.stack(output.hidden_states)
         try:
             toks_embeds = toks_embeds[12]
