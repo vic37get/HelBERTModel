@@ -1,17 +1,18 @@
 import numpy as np
 import torch
-from torch.nn import BCEWithLogitsLoss
 from torch.optim import AdamW
 from tqdm.auto import tqdm
 import sys
 from datasets import load_dataset
 import os
-from transformers import AutoModel, AutoTokenizer, logging
+from transformers import AutoTokenizer, logging
 from torch.utils.data import DataLoader
 from statistics import mean 
+from  distrib_balanced_loss import ResampleLoss
 import logging
 import time
-from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_score, hamming_loss, classification_report
+import pandas as pd
+from sklearn.metrics import hamming_loss, classification_report
 from belt_nlp.splitting import split_tokens_into_smaller_chunks, add_special_tokens_at_beginning_and_end, add_padding_tokens, stack_tokens_from_all_chunks
 sys.path.insert(0, '../../../')
 from utils.earlyStopping import EarlyStopping
@@ -35,17 +36,18 @@ class ClassificaIndicios:
         self.layer = layer
         self.modelo = modelo
         self.gradient_accumulation_steps = gradient_accumulation_steps
+        self.dataset = dataset
         self.device = torch.device('cuda')
 
         print('Carregando o tokenizador...')
         self.tokenizer = AutoTokenizer.from_pretrained(tokenizer)
         
-        self.dataset = load_dataset("csv", data_files={"dataset": dataset})
-        self.labels = list(self.dataset['dataset'].features.keys())[1:]
+        self.data = load_dataset("csv", data_files={"dataset": dataset})
+        self.labels = list(self.data['dataset'].features.keys())[1:]
         self.id2label = {idx:label for idx, label in enumerate(self.labels)}
         self.label2id = {label:idx for idx, label in enumerate(self.labels)}
         
-        self.encoded_dataset = self.dataset.map(self.preprocess_data, batched=True, remove_columns=self.dataset['dataset'].column_names)
+        self.encoded_dataset = self.data.map(self.preprocess_data, batched=True, remove_columns=self.data['dataset'].column_names)
         self.encoded_dataset.set_format("torch")
 
         self.loggert = logging.getLogger(name='tela')
@@ -120,7 +122,7 @@ class ClassificaIndicios:
             input_ids, attention_mask = stack_tokens_from_all_chunks(input_id_chunks, mask_chunks)
             # Passando os dados para o modelo
             logits=self.classifier(input_ids = input_ids.to(self.device), attention_mask = attention_mask.to(self.device))
-            loss=self.criterion(logits.squeeze(0), labels)
+            loss=self.criterion(logits, labels.unsqueeze(0))
             loop.set_description(f'Treinamento - {self.model_name} | Fold: {fold} | Época: {epoca}')
             loop.set_postfix(loss=loss.item())
             losses.append(float(loss.detach().cpu().numpy()))
@@ -165,7 +167,7 @@ class ClassificaIndicios:
             with torch.no_grad():
                 # Obtendo os embeddings
                 logits=self.classifier(input_ids = input_ids.to(self.device), attention_mask = attention_mask.to(self.device))
-            loss=self.criterion(logits.squeeze(0), labels)
+            loss=self.criterion(logits, labels.unsqueeze(0))
             loop.set_description(f'Validação - {self.model_name} | Fold: {fold} | Época: {epoch}')
             loop.set_postfix(loss=loss.item())
             val_losses.append(float(loss.detach().cpu().numpy()))
@@ -194,7 +196,19 @@ class ClassificaIndicios:
         save_best_metrics = SaveBestMetrics()
         for fold,(train_idx, val_idx) in enumerate(folds):
             metrics_f1_curve = []
-            self.criterion = BCEWithLogitsLoss()
+            train_df = pd.read_csv(self.dataset).iloc[train_idx]
+            term2count=dict()
+            for l in self.labels:
+                term2count[l]=len(train_df[train_df[l]==1])
+            FREQ_CUTOFF = 0 
+            term_freq = sorted([term for term, count in term2count.items() if count>=FREQ_CUTOFF])
+            class_freq = [term2count[x] for x in term_freq]
+            train_num = len(train_df)
+            
+            self.criterion = ResampleLoss(reweight_func='rebalance', 
+                        loss_weight=1.0, focal=dict(focal=True, alpha=0.5, gamma=2),
+                        logit_reg=dict(init_bias=0.05, neg_scale=2.0), map_param=dict(alpha=2.5, beta=10.0, gamma=0.9),
+                        class_freq=class_freq, train_num=train_num)
             self.classifier = Classifier(input_size = 768, output_size=7, layer=self.layer, model=self.modelo, tokenizer=self.tokenizer).to(self.device)
             self.optimizer = AdamW(self.classifier.parameters(), lr=self.learning_rate)
             early_stopping = EarlyStopping(self.patience, os.path.join(self.dir_save_models, "checkpoint.pth"), trace_func=self.loggert.debug)
