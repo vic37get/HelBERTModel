@@ -35,7 +35,7 @@ class ClassificaIndicios:
         self.layer = layer
         self.modelo = modelo
         self.gradient_accumulation_steps = gradient_accumulation_steps
-        self.device = torch.device('cpu')
+        self.device = torch.device('cuda')
 
         print('Carregando o tokenizador...')
         self.tokenizer = AutoTokenizer.from_pretrained(tokenizer)
@@ -106,7 +106,7 @@ class ClassificaIndicios:
         trunc_size=int(510*(self.max_chunks/self.batch_size))
         loop = tqdm(train_loader, leave=True, colour='green')
         for batch_idx, inputs in enumerate(loop):
-            labels = inputs.get("labels")
+            labels = inputs.get("labels").to(self.device)
             input_ids_padded=inputs['input_ids']
             indexes = torch.nonzero(input_ids_padded)
             input_ids_orig = self.truncate_tensor(input_ids_padded[indexes].squeeze().unsqueeze(dim=0).to("cpu"), trunc_size)
@@ -150,7 +150,7 @@ class ClassificaIndicios:
         trunc_size=int(510*(self.max_chunks/self.batch_size))
         loop = tqdm(val_loader, leave=True, colour='blue')
         for inputs in loop:
-            labels = inputs.get("labels")
+            labels = inputs.get("labels").to(self.device)
             input_ids_padded=inputs['input_ids']
             indexes = torch.nonzero(input_ids_padded)
             input_ids_orig = self.truncate_tensor(input_ids_padded[indexes].squeeze().unsqueeze(dim=0).to("cpu"), trunc_size)
@@ -204,19 +204,19 @@ class ClassificaIndicios:
             inicio = time.time()
             for epoch in range(self.epochs):
                 trainLoss = self.train_step(train_dataset, fold+1, epoch+1)
-                valMetrics = self.val_step(val_dataset, epoch+1, fold+1)
-                metrics_f1_curve.append(valMetrics['cf_report']['micro avg']['f1-score'])
+                valMetrics = self.val_step(val_dataset, fold+1, epoch+1)
+                metrics_f1_curve.append(valMetrics['cf_report']['weighted avg']['f1-score'])
                 self.loggert.debug("\n| Fold | Epoca | Train Loss | Val Loss | Precisão | Recall |   F1   | Acurácia | Hamming Loss |")
                 self.loggert.debug("--------------------------------------------------------------------------------------")
                 self.loggert.debug("|  %s  |  %s  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |\n", fold+1, epoch+1,
-                                   trainLoss, valMetrics['val_losses'], valMetrics['cf_report']['micro avg']['precision'],
-                                   valMetrics['cf_report']['micro avg']['recall'], valMetrics['cf_report']['micro avg']['f1-score'],
+                                   trainLoss, valMetrics['val_losses'], valMetrics['cf_report']['weighted avg']['precision'],
+                                   valMetrics['cf_report']['weighted avg']['recall'], valMetrics['cf_report']['weighted avg']['f1-score'],
                                    valMetrics['cf_report']['accuracy'], valMetrics['hloss'])
                 early_stopping(valMetrics['val_losses'], self.classifier, self.optimizer, epoch+1)        
                 if early_stopping.early_stop:
                     self.loggert.debug("Early stopping")
                     break
-                bestMetrics = save_best_metrics(valMetrics['cf_report']['micro avg']['f1-score'], valMetrics, trainLoss)
+                bestMetrics = save_best_metrics(valMetrics['cf_report']['weighted avg']['f1-score'], valMetrics, trainLoss)
                 save_best_model(valMetrics['val_losses'], self.classifier, self.dir_save_models, self.model_name)
             fim = time.time()
 
@@ -231,7 +231,9 @@ class ClassificaIndicios:
         metricas = {
             "model_name": self.model_name,
             "train_loss": np.mean(history['train_losses']),
+            "train_loss_curve": history['train_losses'],
             "val_loss": np.mean(history['val_losses']),
+            "val_loss_curve": history['val_losses'],
             "cf_report": self.calculate_mean_global_metrics(history['cf_report']),
             "hloss": np.mean(history['hloss']),
             "training_time_epoch": history['time_per_epoch'],

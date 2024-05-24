@@ -2,27 +2,21 @@
     "batch_size": 1,
     "epochs": 80,
     "patience": 3,
-    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Indicios/CrossValidation",
-    "dir_save_models": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/Indicios/CrossValidation",
+    "dir_save_metrics": "/home/weslley/HelBERTModel/Metricas/Indicios/CrossValidAvg",
+    "dir_save_models": "/home/weslley/HelBERTModel/Modelos/Indicios/CrossValidAvg",
     "filenameMetrics": "metrics",
     "layer": 12,
     "gradient_accumulation_steps": 8,
     "fileFolds": "./folds.npy",
     "learning_rate": 1e-5,
-    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsGold/dataset_gold_hab_atualizada.csv",
+    "dataset": "/home/weslley/HelBERTModel/Datasets/Indicios/DatasetsGold/dataset_gold_hab_atualizada.csv",
     "coluna": "text",
     "modelos": [
         {
-            "model_name": "HelBERT-base-uncased-scratch",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20",
+            "model_name": "HelBERT-base-uncased-scratch-23",
+            "modelo": "/home/weslley/HelBERTModel/Modelos/PreTreinamento/HelBERT-base-uncased-scratch-23",
             "max_chunks": 7,
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20"
-        },
-        {
-            "model_name": "HelBERT-base-uncased",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased/checkpoint-epoca-30",
-            "max_chunks": 7,
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased/checkpoint-epoca-30"
+            "tokenizador": "/home/weslley/HelBERTModel/Modelos/PreTreinamento/HelBERT-base-uncased-scratch-23"
         },
         {
             "model_name": "LegalBERT-pt-sc",
@@ -45,7 +39,7 @@
         {
             "model_name": "mBERT",
             "modelo": "bert-base-multilingual-cased",
-            "max_chunks": 7,
+            "max_chunks": 5,
             "tokenizador": "bert-base-multilingual-cased"
         }
     ]
