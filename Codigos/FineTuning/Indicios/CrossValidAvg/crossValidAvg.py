@@ -175,8 +175,8 @@ class ClassificaIndicios:
             predictions=torch.clone(probs)
             predictions[predictions >= 0.5] = 1
             predictions[predictions < 0.5] = 0
-            preds.append(torch.tensor(predictions.cpu().detach().numpy()).squeeze(0))
-            trues.append(torch.tensor(labels.cpu().detach().numpy()))     
+            preds.append(torch.tensor(predictions.cpu().detach().numpy()))
+            trues.append(torch.tensor(labels.unsqueeze(0).cpu().detach().numpy()))     
         y_true=torch.cat(trues,0)
         y_pred=torch.cat(preds,0)
         cf_report = classification_report(y_true, y_pred, output_dict=True)
@@ -191,11 +191,12 @@ class ClassificaIndicios:
             folds: folds de treino e validação
             train_dataset: dataset de treino
         """
-        history={'train_losses': [],'val_losses': [], 'cf_report': [], 'f1_curve': [], 'hloss': [], 'time_per_epoch': [], 'epochs_per_fold': []}
+        history={'train_losses': [],'val_losses': [], 'cf_report': [], 'f1_curve': [], 'train_loss_curve': [], 'val_loss_curve': [], 'hloss': [], 'time_per_epoch': [], 'epochs_per_fold': []}
         save_best_model = SaveBestModel()
         save_best_metrics = SaveBestMetrics()
         for fold,(train_idx, val_idx) in enumerate(folds):
-            metrics_f1_curve = []
+            f1_curve, train_loss_curve, val_loss_curve  = [], [], []
+
             train_df = pd.read_csv(self.dataset).iloc[train_idx]
             term2count=dict()
             for l in self.labels:
@@ -209,28 +210,32 @@ class ClassificaIndicios:
                         loss_weight=1.0, focal=dict(focal=True, alpha=0.5, gamma=2),
                         logit_reg=dict(init_bias=0.05, neg_scale=2.0), map_param=dict(alpha=2.5, beta=10.0, gamma=0.9),
                         class_freq=class_freq, train_num=train_num)
+            
             self.classifier = Classifier(input_size = 768, output_size=7, layer=self.layer, model=self.modelo, tokenizer=self.tokenizer).to(self.device)
             self.optimizer = AdamW(self.classifier.parameters(), lr=self.learning_rate)
             early_stopping = EarlyStopping(self.patience, os.path.join(self.dir_save_models, "checkpoint.pth"), trace_func=self.loggert.debug)
             train_dataset = self.encoded_dataset['dataset'].select(train_idx)
             val_dataset = self.encoded_dataset['dataset'].select(val_idx)
+            
             bestMetrics = {}
             inicio = time.time()
             for epoch in range(self.epochs):
                 trainLoss = self.train_step(train_dataset, fold+1, epoch+1)
                 valMetrics = self.val_step(val_dataset, fold+1, epoch+1)
-                metrics_f1_curve.append(valMetrics['cf_report']['weighted avg']['f1-score'])
+                f1_curve.append(valMetrics['cf_report']['micro avg']['f1-score'])
+                train_loss_curve.append(trainLoss)
+                val_loss_curve.append(valMetrics['val_losses'])
                 self.loggert.debug("\n| Fold | Epoca | Train Loss | Val Loss | Precisão | Recall |   F1   | Acurácia | Hamming Loss |")
                 self.loggert.debug("--------------------------------------------------------------------------------------")
                 self.loggert.debug("|  %s  |  %s  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |\n", fold+1, epoch+1,
-                                   trainLoss, valMetrics['val_losses'], valMetrics['cf_report']['weighted avg']['precision'],
-                                   valMetrics['cf_report']['weighted avg']['recall'], valMetrics['cf_report']['weighted avg']['f1-score'],
+                                   trainLoss, valMetrics['val_losses'], valMetrics['cf_report']['micro avg']['precision'],
+                                   valMetrics['cf_report']['micro avg']['recall'], valMetrics['cf_report']['micro avg']['f1-score'],
                                    valMetrics['cf_report']['accuracy'], valMetrics['hloss'])
                 early_stopping(valMetrics['val_losses'], self.classifier, self.optimizer, epoch+1)        
                 if early_stopping.early_stop:
                     self.loggert.debug("Early stopping")
                     break
-                bestMetrics = save_best_metrics(valMetrics['cf_report']['weighted avg']['f1-score'], valMetrics, trainLoss)
+                bestMetrics = save_best_metrics(valMetrics['cf_report']['micro avg']['f1-score'], valMetrics, trainLoss)
                 save_best_model(valMetrics['val_losses'], self.classifier, self.dir_save_models, self.model_name)
             fim = time.time()
 
@@ -238,16 +243,18 @@ class ClassificaIndicios:
             history['val_losses'].append(bestMetrics['val_losses'])
             history['cf_report'].append(bestMetrics['cf_report'])
             history['hloss'].append(bestMetrics['hloss'])
-            history['f1_curve'].append(metrics_f1_curve)
+            history['f1_curve'].append(f1_curve)
+            history['train_loss_curve'].append(train_loss_curve)
+            history['val_loss_curve'].append(val_loss_curve)
             history['time_per_epoch'].append((fim - inicio)/epoch)
             history['epochs_per_fold'].append(epoch)
 
         metricas = {
             "model_name": self.model_name,
             "train_loss": np.mean(history['train_losses']),
-            "train_loss_curve": history['train_losses'],
+            "train_loss_curve": history['train_loss_curve'],
             "val_loss": np.mean(history['val_losses']),
-            "val_loss_curve": history['val_losses'],
+            "val_loss_curve": history['val_loss_curve'],
             "cf_report": self.calculate_mean_global_metrics(history['cf_report']),
             "hloss": np.mean(history['hloss']),
             "training_time_epoch": history['time_per_epoch'],
