@@ -14,15 +14,15 @@ import time
 import pandas as pd
 from sklearn.metrics import hamming_loss, classification_report,accuracy_score
 from belt_nlp.splitting import split_tokens_into_smaller_chunks, add_special_tokens_at_beginning_and_end, add_padding_tokens, stack_tokens_from_all_chunks
+from classifier import Classifier
 sys.path.insert(0, '../../../')
 from utils.earlyStopping import EarlyStopping
-from utils.classifier import Classifier
 from utils.modelSaves import SaveBestMetrics, SaveBestModel
 
 
 class ClassificaIndicios:
     def __init__(self, batch_size: int, epochs: int, patience: int, model_name: str, dir_save_metrics: str,
-                  dir_save_models: str, learning_rate: float, gradient_accumulation_steps: int, modelo: str, max_chunks: int, layer: int, tokenizer: str, dataset: str, coluna: str) -> None:
+                  dir_save_models: str, learning_rate: float, gradient_accumulation_steps: int, modelo: str, max_chunks: int, method: int, tokenizer: str, dataset: str, coluna: str) -> None:
         
         self.batch_size = batch_size
         self.epochs = epochs
@@ -33,7 +33,7 @@ class ClassificaIndicios:
         self.learning_rate = learning_rate
         self.coluna = coluna
         self.max_chunks = max_chunks
-        self.layer = layer
+        self.method = method
         self.modelo = modelo
         self.gradient_accumulation_steps = gradient_accumulation_steps
         self.dataset = dataset
@@ -212,7 +212,7 @@ class ClassificaIndicios:
                         logit_reg=dict(init_bias=0.05, neg_scale=2.0), map_param=dict(alpha=2.5, beta=10.0, gamma=0.9),
                         class_freq=class_freq, train_num=train_num)
             
-            self.classifier = Classifier(input_size = 768, output_size=7, layer=self.layer, model=self.modelo, tokenizer=self.tokenizer).to(self.device)
+            self.classifier = Classifier(input_size = 768, output_size=7, method=self.method, model=self.modelo, tokenizer=self.tokenizer).to(self.device)
             self.optimizer = AdamW(self.classifier.parameters(), lr=self.learning_rate)
             early_stopping = EarlyStopping(self.patience, os.path.join(self.dir_save_models, "checkpoint.pth"), trace_func=self.loggert.debug)
             train_dataset = self.encoded_dataset['dataset'].select(train_idx)

@@ -15,87 +15,44 @@
             "model_name": "BERTimbau",
             "modelo": "neuralmind/bert-base-portuguese-cased",
             "max_chunks": 7,
-            "layer": 11,
+            "method": "1",
             "tokenizador": "neuralmind/bert-base-portuguese-cased"
         },
         {
             "model_name": "BERTimbau",
             "modelo": "neuralmind/bert-base-portuguese-cased",
             "max_chunks": 7,
-            "layer": 10,
+            "method": "2",
             "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        }
-        ,
+        },
         {
             "model_name": "BERTimbau",
             "modelo": "neuralmind/bert-base-portuguese-cased",
             "max_chunks": 7,
-            "layer": 9,
+            "method": "3",
             "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        }
-        ,
+        },
         {
             "model_name": "BERTimbau",
             "modelo": "neuralmind/bert-base-portuguese-cased",
             "max_chunks": 7,
-            "layer": 8,
+            "method": "4",
             "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        }
-        ,
+        },
         {
             "model_name": "BERTimbau",
             "modelo": "neuralmind/bert-base-portuguese-cased",
             "max_chunks": 7,
-            "layer": 7,
+            "method": "5",
             "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        }
-        ,
+        },
         {
             "model_name": "BERTimbau",
             "modelo": "neuralmind/bert-base-portuguese-cased",
             "max_chunks": 7,
-            "layer": 6,
+            "method": "6",
             "tokenizador": "neuralmind/bert-base-portuguese-cased"
         }
-        ,
-        {
-            "model_name": "BERTimbau",
-            "modelo": "neuralmind/bert-base-portuguese-cased",
-            "max_chunks": 7,
-            "layer": 5,
-            "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        }
-        ,
-        {
-            "model_name": "BERTimbau",
-            "modelo": "neuralmind/bert-base-portuguese-cased",
-            "max_chunks": 7,
-            "layer": 4,
-            "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        }
-        ,
-        {
-            "model_name": "BERTimbau",
-            "modelo": "neuralmind/bert-base-portuguese-cased",
-            "max_chunks": 7,
-            "layer": 3,
-            "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        }
-        ,
-        {
-            "model_name": "BERTimbau",
-            "modelo": "neuralmind/bert-base-portuguese-cased",
-            "max_chunks": 7,
-            "layer": 2,
-            "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        }
-        ,
-        {
-            "model_name": "BERTimbau",
-            "modelo": "neuralmind/bert-base-portuguese-cased",
-            "max_chunks": 7,
-            "layer": 1,
-            "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        }
+        
     ]
 }
