@@ -12,7 +12,7 @@ from  distrib_balanced_loss import ResampleLoss
 import logging
 import time
 import pandas as pd
-from sklearn.metrics import hamming_loss, classification_report
+from sklearn.metrics import hamming_loss, classification_report,accuracy_score
 from belt_nlp.splitting import split_tokens_into_smaller_chunks, add_special_tokens_at_beginning_and_end, add_padding_tokens, stack_tokens_from_all_chunks
 sys.path.insert(0, '../../../')
 from utils.earlyStopping import EarlyStopping
@@ -180,8 +180,9 @@ class ClassificaIndicios:
         y_true=torch.cat(trues,0)
         y_pred=torch.cat(preds,0)
         cf_report = classification_report(y_true, y_pred, output_dict=True)
+        acuracia=accuracy_score(y_true, y_pred)
         hl = hamming_loss(y_true, y_pred)
-        return {'fold': fold, 'epoca':epoch, 'val_losses':mean(val_losses), 'cf_report': cf_report, 'hloss': hl}        
+        return {'fold': fold, 'epoca':epoch, 'val_losses':mean(val_losses), 'cf_report': cf_report,'accuracy':acuracia, 'hloss': hl}        
 
 
     def modelTraining(self, folds: list) -> None:
@@ -230,7 +231,7 @@ class ClassificaIndicios:
                 self.loggert.debug("|  %s  |  %s  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |  %.4f  |\n", fold+1, epoch+1,
                                    trainLoss, valMetrics['val_losses'], valMetrics['cf_report']['micro avg']['precision'],
                                    valMetrics['cf_report']['micro avg']['recall'], valMetrics['cf_report']['micro avg']['f1-score'],
-                                   valMetrics['cf_report']['accuracy'], valMetrics['hloss'])
+                                   valMetrics['accuracy'], valMetrics['hloss'])
                 early_stopping(valMetrics['val_losses'], self.classifier, self.optimizer, epoch+1)        
                 if early_stopping.early_stop:
                     self.loggert.debug("Early stopping")

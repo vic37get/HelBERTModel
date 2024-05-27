@@ -1,6 +1,5 @@
 import re
 import unicodedata
-
 from .constants import PUNCTUATIONS
 
 
