@@ -434,49 +434,49 @@ class Corretor:
         """
         Tokeniza URL.
         """
-        return re.sub(r'(((https?:\/\/)(www\.))|(www\.)|(https?:\/\/))[-a-zA-Z0-9@:%.\+~#=]{1,256}\.[a-zA-Z@0-9()]{1,6}\b([-a-zA-Z0-9()@:%\+.~#?&\/=]*)', '<URL>', paragraphs)
+        return re.sub(r'(((https?:\/\/)(www\.))|(www\.)|(https?:\/\/))[-a-zA-Z0-9@:%.\+~#=]{1,256}\.[a-zA-Z@0-9()]{1,6}\b([-a-zA-Z0-9()@:%\+.~#?&\/=]*)', 'url', paragraphs)
     
     @staticmethod
     def _tokenizaEmail(paragraphs):
         """
         Tokeniza email.
         """
-        return re.sub(r'(\b([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b)', '<EMAIL>', paragraphs)
+        return re.sub(r'(\b([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b)', 'mail', paragraphs)
 
     @staticmethod
     def _tokenizaData(paragraphs):
         """
         Tokeniza data.
         """
-        return re.sub(r'(\b([0-3][0-9]\/[0-1][0-9]\/(([0-9]{2})|([0-2][0-9]{3})))\b)', '<DATA>', paragraphs)
+        return re.sub(r'(\b([0-3][0-9]\/[0-1][0-9]\/(([0-9]{2})|([0-2][0-9]{3})))\b)', 'date', paragraphs)
 
     @staticmethod
     def _tokenizaHora(paragraphs):
         """
         Tokeniza hora.
         """
-        return re.sub(r'(\b(([0-1][0-9])|(2[0-3]))(\:|h)([0-5][0-9])?\b)', '<HORA>', paragraphs)
+        return re.sub(r'(\b(([0-1][0-9])|(2[0-3]))(\:|h)([0-5][0-9])?\b)', 'hour', paragraphs)
     
     @staticmethod
     def _tokenizaNumero(paragraphs):
         """
         Tokeniza número.
         """
-        return re.sub(r'(\b([0-9]+)\b)', '<NUMERO>', paragraphs)
+        return re.sub(r'(\b([0-9]+)\b)', 'number', paragraphs)
     
     @staticmethod
     def _tokenizaNumeroRomano(paragraphs):
         """
         Tokeniza número romano.
         """
-        return re.sub(r"(\s|\.|\,|\;|\:|^)(?=[XVIΙ])(XC|XL|L?X{0,3})([IΙ]X|[IΙ]V|V?[IΙ]{0,3})(\s|\.|\,|\;|\:|$)", '<NUMERO>', paragraphs, flags=re.IGNORECASE)
+        return re.sub(r"(\s|\.|\,|\;|\:|^)(?=[XVIΙ])(XC|XL|L?X{0,3})([IΙ]X|[IΙ]V|V?[IΙ]{0,3})(\s|\.|\,|\;|\:|$)", 'number', paragraphs, flags=re.IGNORECASE)
     
     @staticmethod
     def _reduzNumeros(paragraphs):
         """
         Reduz números.
         """
-        return re.sub(r'(([\.\\\/\;\:\s])*(<NUMERO>([\-–\.\\\/\;\:\,\s])*)+)', ' <NUMERO> ', paragraphs)
+        return re.sub(r'(([\.\\\/\;\:\s])*(<NUMERO>([\-–\.\\\/\;\:\,\s])*)+)', ' number ', paragraphs)
 
     @staticmethod
     def _removeHifenInicial(paragraphs):
