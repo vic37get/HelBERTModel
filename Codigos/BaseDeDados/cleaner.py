@@ -476,7 +476,7 @@ class Corretor:
         """
         Reduz números.
         """
-        return re.sub(r'(([\.\\\/\;\:\s])*(<NUMERO>([\-–\.\\\/\;\:\,\s])*)+)', ' number ', paragraphs)
+        return re.sub(r'(([\.\\\/\;\:\s])*(number([\-–\.\\\/\;\:\,\s])*)+)', ' number ', paragraphs)
 
     @staticmethod
     def _removeHifenInicial(paragraphs):

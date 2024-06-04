@@ -12,20 +12,6 @@
     "coluna": "text",
     "modelos": [
         {
-            "model_name": "HelBERT-base-uncased-scratch-30",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30",
-            "max_chunks": 7,
-            "method": "4",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30"
-        },
-        {
-            "model_name": "HelBERT-base-uncased-scratch-20",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20",
-            "max_chunks": 7,
-            "method": "4",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20"
-        },
-        {
             "model_name": "LegalBERT-pt-sc",
             "modelo": "raquelsilveira/legalbertpt_sc",
             "max_chunks": 7,
@@ -52,6 +38,20 @@
             "max_chunks": 5,
             "method": "4",
             "tokenizador": "bert-base-multilingual-cased"
+        },
+        {
+            "model_name": "HelBERT-base-uncased-scratch-30",
+            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30",
+            "max_chunks": 7,
+            "method": "4",
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30"
+        },
+        {
+            "model_name": "HelBERT-base-uncased-scratch-20",
+            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20",
+            "max_chunks": 7,
+            "method": "4",
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20"
         }
         
     ]

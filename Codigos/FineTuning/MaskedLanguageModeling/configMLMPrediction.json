@@ -1,16 +1,16 @@
 {
-    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/MaskedLanguageModeling/Indicios/dataset_gold_hab_atualizada_masked.csv",
-    "dir_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/MaskedLanguageModeling/Indicios",
+    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/MaskedLanguageModeling/Indicios/dataset_gold_hab_atualizada_masked_sem_tokenizacao.csv",
+    "dir_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/MaskedLanguageModeling/Indicios/SemTokenizacao",
     "modelos": [
         {
-            "model_name": "HelBERT-base-uncased-scratch",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20"
+            "model_name": "HelBERT-base-uncased-scratch-7",
+            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-7",
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-7"
         },
         {
-            "model_name": "HelBERT-base-uncased",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased/checkpoint-epoca-30",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased/checkpoint-epoca-30"
+            "model_name": "HelBERT-base-uncased-scratch-30",
+            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30",
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30"
         },
         {
             "model_name": "LegalBERT-pt-sc",

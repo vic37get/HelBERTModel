@@ -1,0 +1,26 @@
+[
+    {
+        "model_name": "HelBERT-uncased-fs-7",
+        "perplexity": 1.5138394646287843
+    },
+    {
+        "model_name": "HelBERT-base-uncased-scratch-30",
+        "perplexity": 5.027492883323027
+    },
+    {
+        "model_name": "LegalBERT-pt-sc",
+        "perplexity": 9.242784892395973
+    },
+    {
+        "model_name": "jurisBERT",
+        "perplexity": 7.904435637506879
+    },
+    {
+        "model_name": "BERTimbau",
+        "perplexity": 4.175342059554719
+    },
+    {
+        "model_name": "mBERT",
+        "perplexity": 22.911408145438543
+    }
+]

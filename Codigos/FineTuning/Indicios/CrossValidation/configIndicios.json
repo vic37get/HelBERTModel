@@ -7,18 +7,13 @@
     "filenameMetrics": "metrics",
     "fileFolds": "./folds.npy",
     "learning_rate": 1e-5,
-    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsGold/dataset_gold_hab_atualizada.csv",
+    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsGold/dataset_gold_hab_atualizada_sem_tokenizacao.csv",
     "coluna": "text",
     "modelos": [
         {
-            "model_name": "HelBERT-base-uncased-scratch-30",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30"
-        },
-        {
-            "model_name": "HelBERT-base-uncased-scratch-20",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20"
+            "model_name": "HelBERT-uncased-fs-6",
+            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6",
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6"
         },
         {
             "model_name": "LegalBERT-pt-sc",

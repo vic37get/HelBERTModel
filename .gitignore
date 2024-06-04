@@ -5,7 +5,12 @@ __pycache__/
 *.pt
 *.bin
 *.out
+*.gz
+*.pub
+*.tar
 *.log
+*vastai
+*ssh_11006293.json
 venv/
 # C extensions
 *.so

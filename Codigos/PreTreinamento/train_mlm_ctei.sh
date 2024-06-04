@@ -16,8 +16,8 @@ python train_mlm.py \
     --evaluation_strategy epoch \
     --save_strategy epoch \
     --num_train_epochs 20 \
-    --per_device_train_batch_size 32 \
-    --per_device_eval_batch_size 32 \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 16 \
     --preprocessing_num_workers 16 \
     --max_seq_length 128 \
     --adam_beta1 0.9 \
