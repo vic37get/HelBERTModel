@@ -6,39 +6,9 @@ import pandas as pd
 import numpy as np
 import json
 
-dados = pd.read_csv('/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/MaskedLanguageModeling/LipSet/LipSet_chunk.csv')
+dados = pd.read_csv('/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Objetos/df_tipos_objetos_cased_sem_tokenizacao.csv')
 device = torch.device('cuda')
 list_models = [
-        {
-            "model_name": "HelBERT-uncased-fs-6",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6"
-        },
-        {
-            "model_name": "HelBERT-uncased-fs-16",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-16",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-16"
-        },
-        {
-            "model_name": "HelBERT-base-uncased-scratch-30",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30"
-        },
-        {
-            "model_name": "LegalBERT-pt-sc",
-            "modelo": "raquelsilveira/legalbertpt_sc",
-            "tokenizador": "raquelsilveira/legalbertpt_sc"
-        },
-        {
-            "model_name": "jurisBERT",
-            "modelo": "alfaneo/jurisbert-base-portuguese-uncased",
-            "tokenizador": "alfaneo/jurisbert-base-portuguese-uncased"
-        },
-        {
-            "model_name": "BERTimbau",
-            "modelo": "neuralmind/bert-base-portuguese-cased",
-            "tokenizador": "neuralmind/bert-base-portuguese-cased"
-        },
         {
             "model_name": "mBERT",
             "modelo": "bert-base-multilingual-cased",
@@ -47,7 +17,7 @@ list_models = [
     ]
 
 def score(model, tokenizer, sentence):
-  tensor_input = tokenizer.encode(sentence, return_tensors='pt', truncation=True, max_length=96)
+  tensor_input = tokenizer.encode(sentence, return_tensors='pt', truncation=True, max_length=64)
   repeat_input = tensor_input.repeat(tensor_input.size(-1)-2, 1)
   mask = torch.ones(tensor_input.size(-1) - 1).diag(1)[:-2]
   masked_input = repeat_input.masked_fill(mask == 1, tokenizer.mask_token_id)
@@ -75,4 +45,4 @@ for model_name in list_models:
     result_model['perplexity'] = mean(perplexities)
     results.append(result_model)
     print(result_model)
-json.dump(results, open('/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/MaskedLanguageModeling/Perplexidade/perplexidades-lipset.json', 'w'), indent=4, ensure_ascii=False)
+json.dump(results, open('/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/MaskedLanguageModeling/Perplexidade/perplexidades-mbert.json', 'w'), indent=4, ensure_ascii=False)

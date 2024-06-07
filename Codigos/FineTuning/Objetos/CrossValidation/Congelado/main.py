@@ -27,7 +27,7 @@ def main() -> None:
             metricas = classificador.modelTraining(folds, train_dataset)
 
             print("Salvando resultados do modelo...")
-            writeJson(os.path.join(params['dir_save_metrics'], 'metricsObjetoCongelado-{}-{}.json'.format(num_experimento, setModel['model_name'])), metricas)
+            writeJson(os.path.join(params['dir_save_metrics'], '{}-{}-{}.json'.format(params['filenameMetrics'], num_experimento, setModel['model_name'])), metricas)
             metrics_models.append(metricas)
 
         #print("Salvando resultados de todos os modelos...")

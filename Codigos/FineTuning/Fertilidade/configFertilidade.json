@@ -1,14 +1,10 @@
 {
-    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsGold/dataset_gold_hab_atualizada.csv",
-    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Fertilidade/Indicios", 
+    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Objetos/df_tipos_objetos_cased_sem_tokenizacao.csv",
+    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Fertilidade/Objetos", 
     "modelos": [
         {
-            "model_name": "HelBERT-base-uncased-scratch",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-20"
-        },
-        {
-            "model_name": "HelBERT-base-uncased",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased/checkpoint-epoca-30"
+            "model_name": "HelBERT-uncased-fs-6",
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6"
         },
         {
             "model_name": "LegalBERT-pt-sc",

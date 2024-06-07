@@ -1,7 +1,11 @@
 [
     {
-        "model_name": "HelBERT-uncased-fs-7",
-        "perplexity": 1.5138394646287843
+        "model_name": "HelBERT-uncased-fs-6",
+        "perplexity": 1.5580955022538707
+    },
+    {
+        "model_name": "HelBERT-uncased-fs-16",
+        "perplexity": 1.3343849667972894
     },
     {
         "model_name": "HelBERT-base-uncased-scratch-30",

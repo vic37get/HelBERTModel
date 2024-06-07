@@ -11,10 +11,11 @@ from torch.utils.data import DataLoader, SubsetRandomSampler
 from statistics import mean 
 import logging
 import time
-from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_score, hamming_loss, classification_report
+from sklearn.metrics import accuracy_score, hamming_loss, classification_report
+from classifier import Classifier
 sys.path.insert(0, '../../../../')
 from utils.earlyStopping import EarlyStopping
-from utils.classifier import Classifier
+#from utils.classifier import Classifier
 from utils.myDataset import MyDataset
 from utils.modelSaves import SaveBestMetrics
 

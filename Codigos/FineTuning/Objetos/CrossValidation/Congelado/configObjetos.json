@@ -4,16 +4,36 @@
     "patience": 3,
     "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Objetos/CrossValidation/Congelado/TestesCrossValid",
     "dir_save_models": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/Objetos/CrossValidation/Congelado/TestesCrossValid",
-    "filenameMetrics": "metricsObjetoTesteCongelado1",
-    "fileFolds": "./folds.npy",
+    "filenameMetrics": "metrics_objeto_congelado_cased",
+    "fileFolds": "./folds_cased.npy",
     "learning_rate": 1e-5,
-    "treino": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Objetos/df_tipos_objetos_sem_tokenizacao.csv",
+    "treino": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Objetos/df_tipos_objetos_cased_sem_tokenizacao.csv",
     "coluna": "text",
     "modelos": [
         {
-            "model_name": "HelBERT-base-uncased-scratch-30",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/brazilian-legal-text-bert/Modelos/epocas_HelBERT-base-uncased-scratch/checkpoint-epoca-30"
+            "model_name": "HelBERT-uncased-fs-6",
+            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6",
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6-lower"
+        },
+        {
+            "model_name": "LegalBERT-pt-sc",
+            "modelo": "raquelsilveira/legalbertpt_sc",
+            "tokenizador": "raquelsilveira/legalbertpt_sc"
+        },
+        {
+            "model_name": "jurisBERT",
+            "modelo": "alfaneo/jurisbert-base-portuguese-uncased",
+            "tokenizador": "alfaneo/jurisbert-base-portuguese-uncased"
+        },
+        {
+            "model_name": "BERTimbau",
+            "modelo": "neuralmind/bert-base-portuguese-cased",
+            "tokenizador": "neuralmind/bert-base-portuguese-cased"
+        },
+        {
+            "model_name": "mBERT",
+            "modelo": "bert-base-multilingual-cased",
+            "tokenizador": "bert-base-multilingual-cased"
         }
     ]
 }

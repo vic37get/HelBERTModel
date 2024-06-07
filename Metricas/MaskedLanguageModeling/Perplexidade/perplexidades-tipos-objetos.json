@@ -1,30 +1,22 @@
 [
     {
         "model_name": "HelBERT-uncased-fs-6",
-        "perplexity": 2.2161596696782597
-    },
-    {
-        "model_name": "HelBERT-uncased-fs-16",
-        "perplexity": 1.8341430188011116
-    },
-    {
-        "model_name": "HelBERT-base-uncased-scratch-30",
-        "perplexity": 8.002338048710365
+        "perplexity": 2.199471828848716
     },
     {
         "model_name": "LegalBERT-pt-sc",
-        "perplexity": 17.443506655034234
+        "perplexity": 9.681900885478953
     },
     {
         "model_name": "jurisBERT",
-        "perplexity": 9.348674602387936
+        "perplexity": 9.751311379327412
     },
     {
         "model_name": "BERTimbau",
-        "perplexity": 5.017269847794453
+        "perplexity": 4.007178790738943
     },
     {
         "model_name": "mBERT",
-        "perplexity": 37.60598694787614
+        "perplexity": 15.592182762492351
     }
 ]

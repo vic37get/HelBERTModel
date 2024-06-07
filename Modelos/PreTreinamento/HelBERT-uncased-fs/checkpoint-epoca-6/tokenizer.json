@@ -53,8 +53,8 @@
     "type": "BertNormalizer",
     "clean_text": true,
     "handle_chinese_chars": true,
-    "strip_accents": null,
-    "lowercase": false
+    "strip_accents": true,
+    "lowercase": true
   },
   "pre_tokenizer": {
     "type": "BertPreTokenizer"

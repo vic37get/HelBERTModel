@@ -1,0 +1,25 @@
+{   
+    "batch_size": 1,
+    "epochs": 50,
+    "patience": 3,
+    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Indicios/SplitedClassification",
+    "dir_save_models": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/Indicios/SplitedClassification",
+    "filenameMetrics": "metrics",
+    "frozen": false,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 1e-5,
+    "train": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsWeak/DataAugmentation/bid_notices_weak_sup_hab_clean_train.csv",
+    "test": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsWeak/DataAugmentation/bid_notices_weak_sup_hab_clean_test.csv",
+    "val": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsWeak/DataAugmentation/bid_notices_weak_sup_hab_clean_val.csv",
+    "coluna": "text",
+    "modelos": [
+        {
+            "model_name": "BERTimbau",
+            "modelo": "neuralmind/bert-base-portuguese-cased",
+            "max_chunks": 5,
+            "method": "4",
+            "tokenizador": "neuralmind/bert-base-portuguese-cased"
+        }
+        
+    ]
+}
