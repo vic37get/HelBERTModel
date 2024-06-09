@@ -1,0 +1,44 @@
+{   
+    "batch_size": 1,
+    "epochs": 30,
+    "patience": 3,
+    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Indicios/CrossValidation/Chunks",
+    "dir_save_models": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/Indicios/CrossValidation/Chunks",
+    "filenameMetrics": "metricsIndiciosCased",
+    "gradient_accumulation_steps": 4,
+    "fileFolds": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Codigos/FineTuning/Indicios/CrossValidation/Chunks/folds_gold.npy",
+    "learning_rate": 1e-5,
+    "datasetDir": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsGold/dataset_gold_hab_atualizada_cased.csv",
+    "modelos": [
+        {
+            "model_name": "HelBERT-uncased-fs-6",
+            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6",
+            "max_chunks": 4,
+            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6"
+        },
+        {
+            "model_name": "BERTimbau",
+            "modelo": "neuralmind/bert-base-portuguese-cased",
+            "max_chunks": 4,
+            "tokenizador": "neuralmind/bert-base-portuguese-cased"
+        }, 
+        {
+            "model_name": "LegalBERT-pt-sc",
+            "modelo": "raquelsilveira/legalbertpt_sc",
+            "max_chunks": 4,
+            "tokenizador": "raquelsilveira/legalbertpt_sc"
+        },
+        {
+            "model_name": "jurisBERT",
+            "modelo": "alfaneo/jurisbert-base-portuguese-uncased",
+            "max_chunks": 4,
+            "tokenizador": "alfaneo/jurisbert-base-portuguese-uncased"
+        },        
+        {
+            "model_name": "mBERT",
+            "modelo": "bert-base-multilingual-cased",
+            "max_chunks": 4,
+            "tokenizador": "bert-base-multilingual-cased"
+        }
+    ]
+}
