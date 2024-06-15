@@ -1,10 +1,12 @@
-from transformers import AutoTokenizer, AutoModelForMaskedLM
+from transformers import AutoTokenizer, AutoModelForMaskedLM, pipeline
 import torch
 from tqdm import tqdm
 from numpy import mean
 import pandas as pd
 from torch.utils.data import DataLoader, Dataset
 import numpy as np
+from unidecode import unidecode
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, hamming_loss
 import time
 import os
 import re
@@ -61,10 +63,39 @@ def score(model: AutoModelForMaskedLM, tokenizer: AutoTokenizer, sentence: str, 
     return result
 
 
+def calculateMetrics(true: list, predictions: list) -> dict:
+    precision = precision_score(true, predictions, average='weighted', zero_division=1)
+    recall = recall_score(true, predictions,average='weighted', zero_division=1)
+    f1 = f1_score(true, predictions, average='weighted', zero_division=1)
+    accuracy = accuracy_score(true, predictions)
+    hl = hamming_loss(true, predictions)  
+    return {'precisao': precision, 'recall': recall, 'f1': f1, 'acuracia': accuracy, 'hloss': hl}
+
+def mask_words(sentence):
+    masked_sentences = []
+    words = sentence.split()
+    for i in range(len(words)):
+        if words[i].isalpha():
+            new_sentence = words.copy()
+            new_sentence[i] = '[MASK]'
+            masked_sentences.append([' '.join(new_sentence), words[i]])
+    return masked_sentences
+
+def predicaoUnica(fill_sentence: list) -> str:
+    return unidecode(fill_sentence[0]['token_str']).lower()
+
+def get_perplexity(model, tokenizer, sentence, label):
+    fill = pipeline('fill-mask', model=model, tokenizer=tokenizer, device=0)
+    mlm_predictions = fill(sentence)
+    prediction = predicaoUnica(mlm_predictions)
+    label = unidecode(label).lower()
+    return prediction, label
+
+
 def main() -> None:
     params = openJson('configPerplexidade.json')
     dados = pd.read_csv(params['dataset'])
-    device = torch.device('cpu')
+    device = torch.device('cuda')
     results = []
     
     for model_name in params['modelos']:
@@ -73,19 +104,48 @@ def main() -> None:
         tokenizer = AutoTokenizer.from_pretrained(model_name['tokenizador'])
         model.resize_token_embeddings(len(tokenizer))
         result_model = {}
-        perplexities = []
         inicio = time.time()
+        list_true, list_preds = [], []
         for indice in tqdm(dados.index, desc='Calculando perplexidades para o modelo {}'.format(model_name['model_name']), colour='yellow'):
-            sentence = dados['text'][indice]
-            ppl = score(model, tokenizer, sentence, batch_size=params['batch_size'], device=device)
-            perplexities.append(ppl)
+            sentence = mask_words(dados['text'][indice])
+            for masked_sentence, label in sentence:
+                pred, true = get_perplexity(model, tokenizer, masked_sentence, label)
+                list_true.append(true)
+                list_preds.append(pred)
+        result_model['metrics'] = calculateMetrics(list_true, list_preds, model_name['model_name'])
         fim = time.time()
         result_model['model_name'] = model_name['model_name']
-        result_model['perplexity'] = mean(perplexities)
         result_model['time'] = fim - inicio
         writeJson(os.path.join(params['dir_save_metrics'], '{}-ppl_sem_numeros.json'.format(model_name['model_name'])), result_model)
         results.append(result_model)
     writeJson(os.path.join(params['dir_save_metrics'], 'ppl_models_sem_numeros.json'), results)
+
+
+# def main() -> None:
+#     params = openJson('configPerplexidade.json')
+#     dados = pd.read_csv(params['dataset'])
+#     device = torch.device('cpu')
+#     results = []
+    
+#     for model_name in params['modelos']:
+#         print(f'Importando o modelo {model_name["model_name"]}')
+#         model = AutoModelForMaskedLM.from_pretrained(model_name['modelo']).to(device)
+#         tokenizer = AutoTokenizer.from_pretrained(model_name['tokenizador'])
+#         model.resize_token_embeddings(len(tokenizer))
+#         result_model = {}
+#         perplexities = []
+#         inicio = time.time()
+#         for indice in tqdm(dados.index, desc='Calculando perplexidades para o modelo {}'.format(model_name['model_name']), colour='yellow'):
+#             sentence = dados['text'][indice]
+#             ppl = score(model, tokenizer, sentence, batch_size=params['batch_size'], device=device)
+#             perplexities.append(ppl)
+#         fim = time.time()
+#         result_model['model_name'] = model_name['model_name']
+#         result_model['perplexity'] = mean(perplexities)
+#         result_model['time'] = fim - inicio
+#         writeJson(os.path.join(params['dir_save_metrics'], '{}-ppl_sem_numeros.json'.format(model_name['model_name'])), result_model)
+#         results.append(result_model)
+#     writeJson(os.path.join(params['dir_save_metrics'], 'ppl_models_sem_numeros.json'), results)
 
 
 if __name__ == '__main__':
