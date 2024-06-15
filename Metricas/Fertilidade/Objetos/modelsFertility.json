@@ -1,19 +1,19 @@
 [
     {
         "model": "HelBERT-uncased-fs-6",
-        "fertility": 1.12
+        "fertility": 1.14
     },
     {
         "model": "LegalBERT-pt-sc",
-        "fertility": 1.35
-    },
-    {
-        "model": "jurisBERT",
         "fertility": 1.34
     },
     {
+        "model": "jurisBERT",
+        "fertility": 1.36
+    },
+    {
         "model": "BERTimbau",
-        "fertility": 1.86
+        "fertility": 1.83
     },
     {
         "model": "mBERT",
