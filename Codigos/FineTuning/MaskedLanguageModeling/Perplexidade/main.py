@@ -96,8 +96,8 @@ def main() -> None:
     params = openJson('configPerplexidade.json')
     dados = pd.read_csv(params['dataset'])
     device = torch.device('cuda')
-    indices_skip = []
     results = []
+    indices_skip = []
     # O primeiro modelo a ser calculado é o mBERT, pois ele é o modelo que possui a maior fertilidade.
     # Com isso, sentenças maiores que 512 tokens não serão computadas para nenhum modelo.
     for model_name in params['modelos']:
@@ -110,15 +110,17 @@ def main() -> None:
         list_true, list_preds = [], []
         # Se for uma sentença dentro dos indices para passar, não calcula.
         dados = dados.drop(indices_skip, axis=0).reset_index(drop=True)
+        indices_skip = []
         for indice in tqdm(dados.index, desc='Calculando perplexidades para o modelo {}'.format(model_name['model_name']), colour='yellow'):
             # Se a sentença tokenizada tiver mais de 512 tokens, não calcula.
             try:
-                sentence = mask_words(dados['text'][indice])
+                sentence = mask_words(dados.loc[indice, 'text'])
                 for masked_sentence, label in sentence:
                     pred, true = get_perplexity(model, tokenizer, masked_sentence, label)
                     list_true.append(true)
                     list_preds.append(pred)
             except:
+                print(f'Sentença com {len(tokenizer.tokenize(dados.loc[indice, 'text']))} tokens. Pulando para a próxima sentença.')
                 indices_skip.append(indice)
                 continue
         result_model['metrics'] = calculateMetrics(list_true, list_preds)
