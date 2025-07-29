@@ -1,10 +1,8 @@
-import pandas as pd
 from datasets import load_dataset
 from sklearn.metrics import accuracy_score, hamming_loss, classification_report
-import torch
 import datasets
 datasets.disable_caching()
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, TrainingArguments, EarlyStoppingCallback, Trainer, EvalPrediction
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, TrainingArguments, EarlyStoppingCallback, Trainer
 import time
 import os
 import numpy as np
