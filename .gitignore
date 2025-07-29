@@ -1,17 +1,24 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+*.json
+*/mlruns/*
 *.py[cod]
 *$py.class
 *.pt
 *.bin
+*.arrow
 *.out
 *.gz
 *.pub
+*.npy
 *.tar
 *.log
 *vastai
 *ssh_11006293.json
 venv/
+*/Datasets/*
+*/Modelos/*
+*/Metricas/*
 # C extensions
 *.so
 *.csv
