@@ -2,6 +2,7 @@ import pandas as pd
 from tqdm.auto import tqdm
 from transformers import AutoTokenizer
 import sys
+from numpy import mean
 import os
 sys.path.insert(0, '../../')
 from utils.manipulateFiles import openJson, writeJson
@@ -26,10 +27,10 @@ def main() -> None:
         list_fertility = []
         for indice in tqdm(dados.index, desc="Calculando fertilidade para o modelo {}".format(infoModel['model_name']), colour='blue'):
             list_fertility.append(calculateFertility(dados.loc[indice, 'text'], tokenizer))
-        results_model = {'model': infoModel['model_name'], 'fertility': round(sum(list_fertility) / len(list_fertility), 2)}
-        writeJson(os.path.join(params['dir_save_metrics'], '{}-fertility.json'.format(infoModel['model_name'])), results_model)
+        results_model = {'model': infoModel['model_name'], 'fertility': mean(list_fertility)}
+        writeJson(os.path.join(params['dir_save_metrics'], '{}-{}-fertility.json'.format(params['name_metrics'], infoModel['model_name'])), results_model)
         list_results.append(results_model)
-    writeJson(os.path.join(params['dir_save_metrics'], 'modelsFertility.json'), list_results)
+    writeJson(os.path.join(params['dir_save_metrics'], f"{params['name_metrics']}-models.json"), list_results)
 
 
 if __name__ == "__main__":

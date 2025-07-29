@@ -42,7 +42,7 @@ class FineTunningBertAvgChunks:
         history={'accuracy':[], 'cf_report':[], 'hammingLoss':[]}
         for fold,(train_idx, val_idx) in enumerate(self.folds):
             model = AutoModelForSequenceClassification.from_pretrained(self.modelo, problem_type="multi_label_classification",  num_labels=len(self.labels), id2label=self.id2label, label2id=self.label2id)
-
+            model.resize_token_embeddings(len(self.tokenizer))
             train_dataset = self.encoded_dataset['dataset'].select(train_idx)
             val_dataset = self.encoded_dataset['dataset'].select(val_idx)
 
@@ -95,12 +95,12 @@ class FineTunningBertAvgChunks:
             trainer.train()
             fim = time.time()
             metrics = trainer.evaluate(eval_dataset=val_dataset)
-            trainer.save_metrics(os.path.join(self.dir_save_metrics, "{}_fold_{}.json".format(self.model_name, fold+1)), metrics)
+            trainer.save_metrics(os.path.join(self.dir_save_metrics, "{}_fold_{}.json".format(self.model_name, fold+1)), metrics)  
             history['accuracy'].append(float(metrics['eval_accuracy']))
             history['cf_report'].append(metrics['eval_cf_report'])
             history['hammingLoss'].append(float(metrics['eval_hammingLoss']))
         
-        
+        trainer.save_model(os.path.join(self.dir_save_models, f"{self.model_name}-classifier"))
         metricas = {
             "model_name": self.model_name,
             "accuracy": np.mean(history['accuracy']),

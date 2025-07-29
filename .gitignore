@@ -16,9 +16,9 @@ __pycache__/
 *vastai
 *ssh_11006293.json
 venv/
-*/Datasets/*
-*/Modelos/*
-*/Metricas/*
+Datasets/*
+Modelos/*
+Metricas/*
 # C extensions
 *.so
 *.csv

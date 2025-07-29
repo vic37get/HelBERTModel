@@ -1,0 +1,15 @@
+artifact_uri: file:///var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Codigos/FineTuning/Secoes/CrossValidation/Lsg/mlruns/0/22cca2ba0bd146cb9150d71940808801/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 22cca2ba0bd146cb9150d71940808801
+run_name: /var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/Secoes/CrossValidation/Lsg
+run_uuid: 22cca2ba0bd146cb9150d71940808801
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739359883404
+status: 1
+tags: []
+user_id: victor.silva

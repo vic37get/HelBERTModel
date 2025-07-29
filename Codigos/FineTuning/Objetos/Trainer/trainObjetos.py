@@ -19,6 +19,7 @@ class Dataset(torch.utils.data.Dataset):
         if self.labels:
             item["label"] = torch.tensor(self.labels[idx])
         return item
+    
     def __len__(self):
         return len(self.encodings["input_ids"])
 

@@ -1,0 +1,15 @@
+artifact_uri: file:///var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Codigos/FineTuning/EntidadesNomeadas/CrossValidation/mlruns/0/a5f717e1e0064af0b7794215555af60c/artifacts
+end_time: 1739193123740
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a5f717e1e0064af0b7794215555af60c
+run_name: /var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/EntidadesNomeadas/ner_keyphrase_cv
+run_uuid: a5f717e1e0064af0b7794215555af60c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739192835568
+status: 3
+tags: []
+user_id: victor.silva

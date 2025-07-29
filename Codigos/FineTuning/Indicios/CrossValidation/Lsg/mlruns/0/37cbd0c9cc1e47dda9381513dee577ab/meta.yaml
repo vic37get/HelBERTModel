@@ -1,0 +1,15 @@
+artifact_uri: file:///var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Codigos/FineTuning/Indicios/CrossValidation/Lsg/mlruns/0/37cbd0c9cc1e47dda9381513dee577ab/artifacts
+end_time: 1739134034930
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 37cbd0c9cc1e47dda9381513dee577ab
+run_name: /var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/Indicios/Sintentico
+run_uuid: 37cbd0c9cc1e47dda9381513dee577ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739134033919
+status: 3
+tags: []
+user_id: victor.silva

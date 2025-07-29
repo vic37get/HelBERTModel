@@ -32,7 +32,7 @@ class Classifier(nn.Module):
             toks_embeds = torch.sum(toks_embeds[-4:],dim=0)
         elif self.method=="4":
             #Last hidden layer
-            toks_embeds = toks_embeds[12]
+            toks_embeds = toks_embeds[-1]
         elif self.method=="5":
             #Sum second-to-last hidden layer
             toks_embeds = torch.sum(toks_embeds[1:13],dim=0)

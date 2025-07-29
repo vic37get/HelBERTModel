@@ -1,0 +1,15 @@
+artifact_uri: file:///var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Codigos/FineTuning/EntidadesNomeadas/CrossValidation/mlruns/0/254f00b052a84a51a06054e7f16ffb97/artifacts
+end_time: 1739193976319
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 254f00b052a84a51a06054e7f16ffb97
+run_name: capable-auk-759
+run_uuid: 254f00b052a84a51a06054e7f16ffb97
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739193976312
+status: 3
+tags: []
+user_id: victor.silva

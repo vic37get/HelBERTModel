@@ -13,11 +13,15 @@ import logging
 import time
 import pandas as pd
 from sklearn.metrics import hamming_loss, classification_report,accuracy_score
-from belt_nlp.splitting import split_tokens_into_smaller_chunks, add_special_tokens_at_beginning_and_end, add_padding_tokens, stack_tokens_from_all_chunks
-sys.path.insert(0, '../../../')
+sys.path.insert(0, '/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Codigos')
 from utils.earlyStopping import EarlyStopping
-from utils.classifier import Classifier
+import sys
+sys.path.insert(0, '../../../')
+from utils.classifier_huggingface import Classifier
 from utils.modelSaves import SaveBestMetrics, SaveBestModel
+from utils.belt_nlp.splitting import split_tokens_into_smaller_chunks, add_special_tokens_at_beginning_and_end, add_padding_tokens, stack_tokens_from_all_chunks
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 
 
 class ClassificaIndicios:
@@ -177,7 +181,7 @@ class ClassificaIndicios:
             predictions=torch.clone(probs)
             predictions[predictions >= 0.5] = 1
             predictions[predictions < 0.5] = 0
-            preds.append(torch.tensor(predictions.cpu().detach().numpy()))
+            preds.append(torch.tensor([predictions.cpu().detach().numpy()]))
             trues.append(torch.tensor(labels.unsqueeze(0).cpu().detach().numpy()))     
         y_true=torch.cat(trues,0)
         y_pred=torch.cat(preds,0)
@@ -194,7 +198,7 @@ class ClassificaIndicios:
             folds: folds de treino e validação
             train_dataset: dataset de treino
         """
-        history={'train_losses': [],'val_losses': [], 'cf_report': [], 'f1_curve': [], 'train_loss_curve': [], 'val_loss_curve': [], 'hloss': [], 'time_per_epoch': [], 'epochs_per_fold': []}
+        history={'train_losses': [],'val_losses': [], 'accuracy': [], 'cf_report': [], 'f1_curve': [], 'train_loss_curve': [], 'val_loss_curve': [], 'hloss': [], 'time_per_epoch': [], 'epochs_per_fold': []}
         save_best_model = SaveBestModel()
         save_best_metrics = SaveBestMetrics()
         for fold,(train_idx, val_idx) in enumerate(folds):
@@ -243,6 +247,7 @@ class ClassificaIndicios:
             fim = time.time()
 
             history['train_losses'].append(bestMetrics['train_loss'])
+            history['accuracy'].append(bestMetrics['accuracy'])
             history['val_losses'].append(bestMetrics['val_losses'])
             history['cf_report'].append(bestMetrics['cf_report'])
             history['hloss'].append(bestMetrics['hloss'])
@@ -256,6 +261,7 @@ class ClassificaIndicios:
             "model_name": self.model_name,
             "train_loss": np.mean(history['train_losses']),
             "val_loss": np.mean(history['val_losses']),
+            "accuracy": np.mean(history['accuracy']),
             "cf_report": self.calculate_mean_global_metrics(history['cf_report']),
             "hloss": np.mean(history['hloss']),
             "training_time_epoch": history['time_per_epoch'],

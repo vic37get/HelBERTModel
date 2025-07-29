@@ -2,28 +2,18 @@
     "batch_size": 4,
     "epochs": 30,
     "patience": 3,
-    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Objetos/CrossValidation/Congelado/TestesCrossValid",
-    "dir_save_models": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/Objetos/CrossValidation/Congelado/TestesCrossValid",
-    "filenameMetrics": "metrics_objeto_congelado_cased_com_num",
-    "fileFolds": "./folds_cased_com_num.npy",
+    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Objetos/CrossValidation/NovasMetricas",
+    "dir_save_models": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/Objetos/CrossValidation/NovasMetricas",
+    "filenameMetrics": "metrics_objetos_gold",
+    "fileFolds": "./folds.npy",
     "learning_rate": 1e-5,
-    "treino": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Objetos/df_tipos_objetos_cased_com_num.csv",
+    "treino": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Objetos/DatasetsGold/bidCorpus_objects_type.csv",
     "coluna": "text",
     "modelos": [
         {
-            "model_name": "HelBERT-uncased-fs-6",
-            "modelo": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6",
-            "tokenizador": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Modelos/PreTreinamento/HelBERT-uncased-fs/checkpoint-epoca-6"
-        },
-        {
-            "model_name": "LegalBERT-pt-sc",
-            "modelo": "raquelsilveira/legalbertpt_sc",
-            "tokenizador": "raquelsilveira/legalbertpt_sc"
-        },
-        {
-            "model_name": "jurisBERT",
-            "modelo": "alfaneo/jurisbert-base-portuguese-uncased",
-            "tokenizador": "alfaneo/jurisbert-base-portuguese-uncased"
+            "model_name": "mBERT",
+            "modelo": "bert-base-multilingual-cased",
+            "tokenizador": "bert-base-multilingual-cased"
         },
         {
             "model_name": "BERTimbau",
@@ -31,9 +21,29 @@
             "tokenizador": "neuralmind/bert-base-portuguese-cased"
         },
         {
-            "model_name": "mBERT",
-            "modelo": "bert-base-multilingual-cased",
-            "tokenizador": "bert-base-multilingual-cased"
-        }
+            "model_name": "jurisBERT",
+            "modelo": "alfaneo/jurisbert-base-portuguese-uncased",
+            "tokenizador": "alfaneo/jurisbert-base-portuguese-uncased"
+        },
+        {
+            "model_name": "LegalBERT-pt-sc",
+            "modelo": "raquelsilveira/legalbertpt_sc",
+            "tokenizador": "raquelsilveira/legalbertpt_sc"
+        },
+        {
+            "model_name": "HelBERT-base",
+            "modelo": "tcepi/helbert-base",
+            "tokenizador": "tcepi/helbert-base"
+        },
+        {
+            "model_name": "HelBERT-prunned",
+            "modelo": "tcepi/helbert-prunned",
+            "tokenizador": "tcepi/helbert-prunned"
+        },
+        {
+            "model_name": "HelBERT-lsg",
+            "modelo": "tcepi/helbert-lsg",
+            "tokenizador": "tcepi/helbert-lsg"
+        }     
     ]
 }

@@ -1,6 +1,7 @@
 {
-    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/Indicios/DatasetsGold/dataset_gold_hab_atualizada_cased.csv",
-    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Fertilidade/Indicios", 
+    "dataset": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Datasets/MaskedLanguageModeling/LipSet/LipSet_chunk_cased.csv",
+    "dir_save_metrics": "/var/projetos/Jupyterhubstorage/victor.silva/HelBERTModel/Metricas/Fertilidade/LipSet",
+    "name_metrics": "lipset_cased_128",
     "modelos": [
         {
             "model_name": "HelBERT-uncased-fs-6",

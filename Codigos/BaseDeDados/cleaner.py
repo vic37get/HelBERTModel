@@ -1,6 +1,8 @@
 from copy import deepcopy
 import re
 from unidecode import unidecode
+from pandarallel import pandarallel
+import pandas as pd
 
 
 class Cleaner:
@@ -24,7 +26,8 @@ class Cleaner:
         texts = self._removeNumSecoesInicio(texts)
         texts = self._removeNumSecoes(texts)
         texts = self._removeNumSecoes(texts)
-        texts = self._remove_alternativas(texts)    
+        texts = self._remove_alternativas(texts)
+            
         return texts
     
     @staticmethod
@@ -55,7 +58,7 @@ class Cleaner:
         O espaço antes e depois do token é por conta do padrão que retira os espaços antes e depois do texto.
         """
         paragraphs = re.sub(r'((\s)-)+', ' - ', paragraphs)
-        return re.sub(r'-+', '-', paragraphs)
+        return re.sub(r'[-–]+', '-', paragraphs)
     
     @staticmethod
     def _remove_multiples_dots(paragraphs):
@@ -161,13 +164,13 @@ class Corretor:
         texts = self._incToInciso(texts)
         texts = self._padronizaCNPJ(texts)
         texts = self._padronizaSiglas(texts)
-        # texts = self._tokenizaURL(texts)
-        # texts = self._tokenizaEmail(texts)
-        # texts = self._tokenizaData(texts)
-        # texts = self._tokenizaHora(texts)
-        # texts = self._tokenizaNumero(texts)
-        # texts = self._tokenizaNumeroRomano(texts)
-        # texts = self._reduzNumeros(texts)
+        texts = self._tokenizaURL(texts)
+        texts = self._tokenizaEmail(texts)
+        texts = self._tokenizaData(texts)
+        texts = self._tokenizaHora(texts)
+        texts = self._tokenizaNumero(texts)
+        texts = self._tokenizaNumeroRomano(texts)
+        texts = self._reduzNumeros(texts)
         texts = self._removeHifenInicial(texts)
         texts = self._corrigePontuacao(texts)
         texts = self._remove_characters_inicial(texts)
@@ -434,42 +437,42 @@ class Corretor:
         """
         Tokeniza URL.
         """
-        return re.sub(r'(((https?:\/\/)(www\.))|(www\.)|(https?:\/\/))[-a-zA-Z0-9@:%.\+~#=]{1,256}\.[a-zA-Z@0-9()]{1,6}\b([-a-zA-Z0-9()@:%\+.~#?&\/=]*)', 'url', paragraphs)
+        return re.sub(r'(((https?:\/\/)(www\.))|(www\.)|(https?:\/\/))[-a-zA-Z0-9@:%.\+~#=]{1,256}\.[a-zA-Z@0-9()]{1,6}\b([-a-zA-Z0-9()@:%\+.~#?&\/=]*)', ' url ', paragraphs)
     
     @staticmethod
     def _tokenizaEmail(paragraphs):
         """
         Tokeniza email.
         """
-        return re.sub(r'(\b([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b)', 'mail', paragraphs)
+        return re.sub(r'(\b([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b)', ' mail ', paragraphs)
 
     @staticmethod
     def _tokenizaData(paragraphs):
         """
         Tokeniza data.
         """
-        return re.sub(r'(\b([0-3][0-9]\/[0-1][0-9]\/(([0-9]{2})|([0-2][0-9]{3})))\b)', 'date', paragraphs)
+        return re.sub(r'(\b([0-3][0-9]\/[0-1][0-9]\/(([0-9]{2})|([0-2][0-9]{3})))\b)', ' date ', paragraphs)
 
     @staticmethod
     def _tokenizaHora(paragraphs):
         """
         Tokeniza hora.
         """
-        return re.sub(r'(\b(([0-1][0-9])|(2[0-3]))(\:|h)([0-5][0-9])?\b)', 'hour', paragraphs)
+        return re.sub(r'(\b(([0-1][0-9])|(2[0-3]))(\:|h)([0-5][0-9])?\b)', ' hour ', paragraphs)
     
     @staticmethod
     def _tokenizaNumero(paragraphs):
         """
         Tokeniza número.
         """
-        return re.sub(r'(\b([0-9]+)\b)', 'number', paragraphs)
+        return re.sub(r'([0-9])+', ' number ', paragraphs)
     
     @staticmethod
     def _tokenizaNumeroRomano(paragraphs):
         """
         Tokeniza número romano.
         """
-        return re.sub(r"(\s|\.|\,|\;|\:|^)(?=[XVIΙ])(XC|XL|L?X{0,3})([IΙ]X|[IΙ]V|V?[IΙ]{0,3})(\s|\.|\,|\;|\:|$)", 'number', paragraphs, flags=re.IGNORECASE)
+        return re.sub(r"(\s|\.|\,|\;|\:|^)(?=[XVIΙ])(XC|XL|L?X{0,3})([IΙ]X|[IΙ]V|V?[IΙ]{0,3})(\s|\.|\,|\;|\:|$)", ' number ', paragraphs, flags=re.IGNORECASE)
     
     @staticmethod
     def _reduzNumeros(paragraphs):
@@ -581,3 +584,13 @@ class Remover:
             return ''
         else:
             return paragraphs
+        
+
+def executaLimpeza(dataframe: pd.DataFrame, column: str, cased, accents) -> pd.DataFrame:
+    """
+    Executa a limpeza do DataFrame usando as classes Cleaner e Corretor.
+    """
+    pandarallel.initialize(progress_bar=True)
+    dataframe[column] = dataframe[column].parallel_apply(lambda x: Cleaner().clear(x))
+    dataframe[column] = dataframe[column].parallel_apply(lambda x: Corretor(cased, accents).corrige_termos(x))
+    return dataframe
