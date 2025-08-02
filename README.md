@@ -12,7 +12,7 @@
 - [Fine-tuning e Avaliação](#fine-tuning-e-avaliação)
 - [Como Executar](#como-executar)
 - [Resultados e Métricas](#resultados-e-métricas)
-- [HelBERT no Hugging Face](#helbert-no-hugging-face)
+- [HelBERT no Hugging Face 🤗](#helbert-no-hugging-face)
 
 ---
 
@@ -105,7 +105,6 @@ O modelo **HelBERT-base** está disponível publicamente no [Hugging Face Hub](h
 
 [![Hugging Face](https://img.shields.io/badge/HuggingFace-HelBERT--base-yellow?logo=huggingface)](https://huggingface.co/vic35get/HelBERT-base)
 
----
 
 ### Como utilizar o HelBERT-base
 
