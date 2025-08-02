@@ -12,8 +12,7 @@
 - [Fine-tuning e Avaliação](#fine-tuning-e-avaliação)
 - [Como Executar](#como-executar)
 - [Resultados e Métricas](#resultados-e-métricas)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
+- [HelBERT no Hugging Face](#helbert-no-hugging-face)
 
 ---
 
@@ -88,6 +87,7 @@ Utilize os scripts em Codigos/FineTuning/ para treinar e avaliar o modelo em tar
 
 Gere gráficos e relatórios com os notebooks em Codigos/Graficos/ e Codigos/CalculoMetricasHelBERTs/.
 
+---
 
 ## Resultados e Métricas
 
@@ -96,3 +96,29 @@ Os resultados dos experimentos, métricas de avaliação e comparações com out
 Codigos/CalculoMetricasHelBERTs/metricas_modelos.json
 
 Notebooks de análise em Codigos/CalculoMetricasHelBERTs/
+
+---
+
+## HelBERT no Hugging Face 🤗
+
+O modelo **HelBERT-base** está disponível publicamente no [Hugging Face Hub](https://huggingface.co/vic35get/HelBERT-base):
+
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-HelBERT--base-yellow?logo=huggingface)](https://huggingface.co/vic35get/HelBERT-base)
+
+---
+
+### Como utilizar o HelBERT-base
+
+Você pode importar e utilizar o modelo diretamente em seu código Python com a biblioteca `transformers`:
+
+```python
+from transformers import AutoTokenizer, AutoModel
+
+tokenizer = AutoTokenizer.from_pretrained("vic35get/HelBERT-base")
+model = AutoModel.from_pretrained("vic35get/HelBERT-base")
+
+# Exemplo de uso
+inputs = tokenizer("Exemplo de texto jurídico para o HelBERT.", return_tensors="pt")
+outputs = model(**inputs)
+
+---
