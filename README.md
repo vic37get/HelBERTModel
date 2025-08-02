@@ -12,7 +12,7 @@
 - [Fine-tuning e Avaliação](#fine-tuning-e-avaliação)
 - [Como Executar](#como-executar)
 - [Resultados e Métricas](#resultados-e-métricas)
-- [HelBERT no Hugging Face 🤗](#helbert-no-hugging-face)
+- [HelBERT no Hugging Face 🤗](#helbert-no-hugging-face-🤗)
 
 ---
 
